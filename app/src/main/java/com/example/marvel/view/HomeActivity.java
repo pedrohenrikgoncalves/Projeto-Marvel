@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.marvel.R;
 
 public class HomeActivity extends AppCompatActivity {
-
+// vai da certo essa poha
     Button personagens;
 
     @Override
