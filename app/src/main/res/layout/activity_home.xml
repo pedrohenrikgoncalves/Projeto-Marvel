@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9d0c0f"
+    tools:context=".view.HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu_24dp" />
+
+    <TextView
+        android:id="@+id/textBemVindo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="NomeUsuario"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textBemVindo2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textBemVindo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Bem vindo!"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageBuscar"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/search_45dp" />
+
+    <ImageView
+        android:id="@+id/fundoBranco"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBemVindo" />
+
+    <ImageView
+        android:id="@+id/imagePersonagens"
+        android:layout_width="0dp"
+        android:layout_height="325dp"
+        app:layout_constraintEnd_toEndOf="@+id/fundoBranco"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/fundoBranco"
+        app:layout_constraintTop_toTopOf="@+id/fundoBranco"
+        app:srcCompat="@drawable/personagens" />
+
+    <Button
+        android:id="@+id/buttonPersonagens"
+        android:layout_width="246dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#CF001C"
+        android:text="PERSONAGENS"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imagePersonagens"
+        app:layout_constraintEnd_toEndOf="@+id/imagePersonagens"
+        app:layout_constraintStart_toStartOf="@+id/imagePersonagens"
+        app:layout_constraintTop_toTopOf="@+id/imagePersonagens" />
+
+    <ImageView
+        android:id="@+id/imageQuadrinhos"
+        android:layout_width="0dp"
+        android:layout_height="214dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/fundoBranco"
+        app:layout_constraintStart_toStartOf="@+id/fundoBranco"
+        app:layout_constraintTop_toBottomOf="@+id/imagePersonagens"
+        app:srcCompat="@drawable/quadrinhos" />
+
+    <Button
+        android:id="@+id/buttonQuadrinhos"
+        android:layout_width="246dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#CF001C"
+        android:text="QUADRINHOS"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageQuadrinhos"
+        app:layout_constraintEnd_toEndOf="@+id/imageQuadrinhos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageQuadrinhos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
