@@ -34,14 +34,15 @@ public class PersonagensActivity extends AppCompatActivity {
     private List<Personagens> listaDePersonagens(){
         List<Personagens> personagens = new ArrayList<>();
 
+        int imageResource = R.drawable.marvel_login;
 
-        personagens.add(new Personagens("Iron-Man", "Tony Stark"));
-        personagens.add(new Personagens("Captain America","Steve Rogers"));
-        personagens.add(new Personagens("Thor", "Thor Odinson"));
-        personagens.add(new Personagens("Spider-Man","Peter Parker"));
-        personagens.add(new Personagens("Hulk", "Robert Bruce Banner"));
-        personagens.add(new Personagens("Doutor Stranger", "Stephen Vincent Strange"));
-        personagens.add(new Personagens("Black Widow", "Natalia Alianovna Romanoff"));
+        personagens.add(new Personagens(imageResource,"Iron-Man", "Tony Stark"));
+        personagens.add(new Personagens(imageResource,"Captain America","Steve Rogers"));
+        personagens.add(new Personagens(imageResource,"Thor", "Thor Odinson"));
+        personagens.add(new Personagens(imageResource,"Spider-Man","Peter Parker"));
+        personagens.add(new Personagens(imageResource,"Hulk", "Robert Bruce Banner"));
+        personagens.add(new Personagens(imageResource,"Doutor Stranger", "Stephen Vincent Strange"));
+        personagens.add(new Personagens(imageResource,"Black Widow", "Natalia Alianovna Romanoff"));
 
         return personagens;
     }
