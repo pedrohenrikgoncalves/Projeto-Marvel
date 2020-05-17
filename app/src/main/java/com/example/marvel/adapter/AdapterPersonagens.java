@@ -5,14 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.marvel.model.Personagens;
 import com.example.marvel.R;
 import com.example.marvel.view.DetailPersonagens;
-import com.example.marvel.view.RegisterActivity;
 
 import java.util.List;
 
@@ -39,15 +36,15 @@ public class AdapterPersonagens extends RecyclerView.Adapter<ViewHolderPersonage
         viewHolderPersonagens.heroi.setText(personagens.getHeroi());
         viewHolderPersonagens.nome.setText(personagens.getNome());
         viewHolderPersonagens.imageView.setImageResource(personagens.getImage());
-        viewHolderPersonagens.cardView.setOnClickListener(new View.OnClickListener() {
+        viewHolderPersonagens.cardViewCharacters.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
-                Intent intent = new Intent(v.getContext(), DetailPersonagens.class);
+                Intent intent = new Intent(view.getContext(), DetailPersonagens.class);
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("Heroi", personagens);
                 intent.putExtras(bundle);
-                v.getContext().startActivity(intent);
+                view.getContext().startActivity(intent);
         }
     });
 }

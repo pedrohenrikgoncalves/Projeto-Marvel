@@ -10,8 +10,9 @@ import android.widget.Button;
 import com.example.marvel.R;
 
 public class HomeActivity extends AppCompatActivity {
-// vai da certo essa poha
+
     Button personagens;
+    Button quadrinhos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,15 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         personagens = findViewById(R.id.buttonPersonagens);
+        quadrinhos = findViewById(R.id.buttonQuadrinhos);
 
+        quadrinhos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), QuadrinhosActivity.class);
+                startActivity(intent);
+            }
+        });
         personagens.setOnClickListener(new View.OnClickListener(){
 
             @Override

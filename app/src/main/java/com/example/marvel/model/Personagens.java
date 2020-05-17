@@ -26,15 +26,15 @@ public class Personagens implements Parcelable {
         nome = in.readString();
     }
 
-    public static final Creator<Personagens> CREATOR = new Creator<Personagens>() {
+    public static final Creator<Quadrinhos> CREATOR = new Creator<Quadrinhos>() {
         @Override
-        public Personagens createFromParcel(Parcel in) {
-            return new Personagens(in);
+        public Quadrinhos createFromParcel(Parcel in) {
+            return new Quadrinhos(in);
         }
 
         @Override
-        public Personagens[] newArray(int size) {
-            return new Personagens[size];
+        public Quadrinhos[] newArray(int size) {
+            return new Quadrinhos[size];
         }
     };
 
