@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".view.QuadrinhosActivity"></activity>
         <activity android:name=".view.DetailPersonagens" />
+        <activity android:name=".view.DetailQuadrinhos" />
         <activity android:name=".view.PersonagensActivity" />
         <activity android:name=".view.RegisterActivity" />
         <activity

@@ -29,7 +29,6 @@ class AdapterQuadrinhos(private val quadrinhosList: List<Quadrinhos>) : Recycler
             v.context.startActivity(intent)
         }
     }
-
     override fun getItemCount(): Int {
         return quadrinhosList.size
     }

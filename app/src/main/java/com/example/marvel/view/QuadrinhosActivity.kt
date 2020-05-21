@@ -10,19 +10,19 @@ import com.example.marvel.model.Quadrinhos
 import java.util.*
 
 class QuadrinhosActivity : AppCompatActivity() {
-    private var recyclerView: RecyclerView? = null
-    private var adapterQuadrinhos: AdapterQuadrinhos? = null
-    private val quadrinhosList: List<Quadrinhos> = ArrayList()
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapterQuadrinhos: AdapterQuadrinhos
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_quadrinhos)
         recyclerView = findViewById(R.id.recycler_quadrinhos)
+        recyclerView.layoutManager = LinearLayoutManager(this)
         adapterQuadrinhos = AdapterQuadrinhos(listaDeQuadrinhos())
-        //Dando erro nas duas linhas abaixo
-        layoutManager = LinearLayoutManager(activity)
-        adapter = ListAdapter(mNicolasCageMovies)
-        //recyclerView.setLayoutManager(LinearLayoutManager(this))
-        //recyclerView.setAdapter(adapterQuadrinhos)
+        recyclerView.adapter = adapterQuadrinhos
+
     }
 
     private fun listaDeQuadrinhos(): List<Quadrinhos> {
