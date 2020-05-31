@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.marvel">
 
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_aplicativo"
@@ -9,11 +10,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.QuadrinhosActivity"></activity>
-        <activity android:name=".view.DetailPersonagens" />
-        <activity android:name=".view.DetailQuadrinhos" />
-        <activity android:name=".view.PersonagensActivity" />
-        <activity android:name=".view.RegisterActivity" />
+
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".view.QuadrinhosActivity"/>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".view.DetailPersonagens" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".view.DetailQuadrinhos" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".view.PersonagensActivity" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".view.RegisterActivity" />
         <activity
             android:name=".view.SplashActivity"
             android:theme="@style/SplashTheme">
@@ -23,8 +35,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.HomeActivity" />
-        <activity android:name=".view.LoginActivity" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".view.HomeActivity" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".view.LoginActivity" />
     </application>
 
 </manifest>
