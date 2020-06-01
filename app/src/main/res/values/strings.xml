@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Marvel</string>
+    <string name="imagem">nome</string>
+    <string name="drawerlayout_header">drawerlayout_header</string>
+    <string name="action_settings">configurações</string>
+    <string name="menu_slideshow">slideshow</string>
+    <string name="menu_gallery">gallery</string>
+    <string name="menu_home">home</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.marvel.model;
 
-
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -15,6 +14,18 @@ public class Personagens implements Parcelable {
             this.nome = nome;
         }
 
+    public static final Creator<Personagens> CREATOR = new Creator<Personagens>() {
+        @Override
+        public Personagens createFromParcel(Parcel in) {
+            return new Personagens(in);
+        }
+
+        @Override
+        public Personagens[] newArray(int size) {
+            return new Personagens[size];
+        }
+    };
+
     public int getImage() {
         return image;
     }
@@ -25,18 +36,6 @@ public class Personagens implements Parcelable {
         heroi = in.readString();
         nome = in.readString();
     }
-
-    public static final Creator<Quadrinhos> CREATOR = new Creator<Quadrinhos>() {
-        @Override
-        public Quadrinhos createFromParcel(Parcel in) {
-            return new Quadrinhos(in);
-        }
-
-        @Override
-        public Quadrinhos[] newArray(int size) {
-            return new Quadrinhos[size];
-        }
-    };
 
     public String getHeroi() {
             return heroi;
