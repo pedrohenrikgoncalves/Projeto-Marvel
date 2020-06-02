@@ -10,14 +10,14 @@ import com.example.marvel.model.personagens.Personagem
 import com.example.marvel.view.DetailPersonagens
 import com.squareup.picasso.Picasso
 
-class AdapterPersonagens(private val personagensList: MutableSet<Personagem>) : RecyclerView.Adapter<ViewHolderPersonagens>() {
+class AdapterPersonagens(private val personagensList: MutableSet<Personagem>) : RecyclerView.Adapter<ViewHolderPersonagem>() {
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolderPersonagens {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolderPersonagem {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.characters_iten, viewGroup, false)
-        return ViewHolderPersonagens(view)
+        return ViewHolderPersonagem(view)
     }
 
-    override fun onBindViewHolder(viewHolderPersonagens: ViewHolderPersonagens, position: Int) {
+    override fun onBindViewHolder(viewHolderPersonagens: ViewHolderPersonagem, position: Int) {
         val personage = personagensList.elementAt(position)
         viewHolderPersonagens.heroi.text = personage.name
         Picasso.get().load(personage.thumbnail.path + ".jpg")

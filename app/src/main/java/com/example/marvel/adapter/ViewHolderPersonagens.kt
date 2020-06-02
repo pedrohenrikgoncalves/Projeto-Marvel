@@ -7,9 +7,8 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
 
-class ViewHolderPersonagens(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class ViewHolderPersonagem(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var imageView: ImageView = itemView.findViewById(R.id.imagePersonagens)
     var heroi: TextView = itemView.findViewById(R.id.text_titulo)
     var cardViewCharacters: CardView = itemView.findViewById(R.id.card_view_characters)
-
 }
