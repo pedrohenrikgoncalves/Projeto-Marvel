@@ -14,14 +14,12 @@ public class ViewHolderPersonagens extends RecyclerView.ViewHolder {
 
     ImageView imageView;
     TextView heroi;
-    TextView nome;
     CardView cardViewCharacters;
 
     public ViewHolderPersonagens(@NonNull View itemView) {
         super(itemView);
 
         heroi = itemView.findViewById(R.id.text_titulo);
-        nome = itemView.findViewById(R.id.text_volume);
         cardViewCharacters = itemView.findViewById(R.id.card_view_characters);
         imageView = itemView.findViewById(R.id.imagePersonagens);
     }

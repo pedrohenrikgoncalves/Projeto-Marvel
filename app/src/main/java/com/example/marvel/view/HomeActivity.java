@@ -24,7 +24,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     Button personagens;
     Button quadrinhos;
-    ImageView hambugue;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     FragmentManager manager;
@@ -35,21 +34,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
         setContentView(R.layout.navegation_drawer);
 
-        hambugue = findViewById(R.id.menu_hamburger);
         personagens = findViewById(R.id.buttonPersonagens);
         quadrinhos = findViewById(R.id.buttonQuadrinhos);
-        hambugue = findViewById(R.id.menu_hamburger);
         navigationView = findViewById(R.id.nav_view);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView.setNavigationItemSelectedListener(this);
         manager = getSupportFragmentManager();
 
-        hambugue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            drawerLayout.openDrawer(GravityCompat.START);
-            }
-        });
+//        hambugue.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//            drawerLayout.openDrawer(GravityCompat.START);
+//            }
+//        });
         quadrinhos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
