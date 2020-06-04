@@ -1,6 +1,8 @@
 package com.example.marvel.repository
 
 import com.example.marvel.model.personagens.RespostaPersonagens
+import com.example.marvel.model.quadrinhos.Quadrinhos
+import com.example.marvel.model.quadrinhos.RespostaQuadrinhos
 import com.example.marvel.network.RetroInit
 import com.example.marvel.network.ServiceMarvel
 import com.example.marvel.util.AppUse.md5
@@ -18,5 +20,9 @@ class RepositoryMarvel {
 
     suspend fun getCharacters() : RespostaPersonagens {
         return serviceInit.getServiceCharacters(ts, hash, publicKey)
+    }
+
+    suspend fun getComics() : RespostaQuadrinhos {
+        return serviceInit.getServiceComics(ts, hash, publicKey)
     }
 }

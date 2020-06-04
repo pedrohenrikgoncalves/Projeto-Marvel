@@ -6,8 +6,8 @@
     <string name="menu_slideshow">slideshow</string>
     <string name="menu_gallery">gallery</string>
     <string name="menu_home">home</string>
-    <string name="bem_vindo">Bem vindo!!</string>
-    <string name="bem_vindo_usuario">Fulano</string>
+    <string name="bem_vindo">Welcome!</string>
+    <string name="bem_vindo_usuario">UserName</string>
     <string name="descri_off">Descrição não encontrada</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -20,4 +20,8 @@
     <string name="perfil">Perfil</string>
     <string name="favoritos">Favoritos</string>
     <string name="sobre">Sobre</string>
+    <string name="btn_characters">CHARACTERS</string>
+    <string name="btn_comics">COMICS</string>
+    <string name="btn_events">EVENTS</string>
+    <string name="btn_creators">CREATORS</string>
 </resources>

@@ -6,7 +6,7 @@
     android:layout_height="130dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_characters"
+        android:id="@+id/card_view_creators"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
@@ -27,22 +27,22 @@
 
 
             <ImageView
-                android:id="@+id/imagePersonagens"
+                android:id="@+id/imageCreators"
                 android:layout_width="100dp"
                 android:layout_height="80dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/text_titulo"
+                app:layout_constraintEnd_toStartOf="@+id/text_creators"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/marvel_login" />
 
             <TextView
-                android:id="@+id/text_titulo"
+                android:id="@+id/text_creators"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Heroi"
+                android:text="CREATORS"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
@@ -50,7 +50,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imagePersonagens"
+                app:layout_constraintStart_toEndOf="@+id/imageCreators"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

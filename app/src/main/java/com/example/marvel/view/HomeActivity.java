@@ -23,8 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
-    private Button personagens;
-    private Button quadrinhos;
+    private Button personagens, criadores, eventos, quadrinhos;
     private FragmentManager manager;
     private DrawerLayout drawerLayout;
 
@@ -37,6 +36,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         personagens = findViewById(R.id.buttonPersonagens);
         quadrinhos = findViewById(R.id.buttonQuadrinhos);
+        criadores = findViewById(R.id.buttonCriadores);
+        eventos = findViewById(R.id.buttonEventos);
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -73,6 +74,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
+        criadores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CreatorsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

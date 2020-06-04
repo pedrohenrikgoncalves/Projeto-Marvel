@@ -1,7 +1,7 @@
-package com.example.marvel.model.personagens
+package com.example.marvel.model.quadrinhos
 
 
-data class RespostaPersonagens(
+data class RespostaQuadrinhos(
     val attributionHTML: String,
     val attributionText: String,
     val code: Int,
