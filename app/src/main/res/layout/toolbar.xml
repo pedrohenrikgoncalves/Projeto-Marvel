@@ -1,37 +1,31 @@
-<Toolbar
+<com.google.android.material.appbar.AppBarLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/wld_toolbar"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/colorPrimary"
-    android:layout_height="wrap_content">
+    >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/menu_24dp"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/app_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:textColor="@color/textColor"
-        android:text="@string/bem_vindo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:textColor="@color/textColor"
+                android:text="@string/bem_vindo"/>
 
-    <TextView
-        android:id="@+id/bemvindo_usuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:textColor="@color/textColor"
-        android:text="@string/bem_vindo_usuario"/>
+                <TextView
+                 android:id="@+id/bemvindo_usuario"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                  android:layout_marginStart="10dp"
+                 android:textColor="@color/textColor"
+                   android:text="@string/bem_vindo_usuario"/>
+         </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:src="@drawable/search_45dp"
-        />
-
-
-</Toolbar>
+</com.google.android.material.appbar.AppBarLayout>

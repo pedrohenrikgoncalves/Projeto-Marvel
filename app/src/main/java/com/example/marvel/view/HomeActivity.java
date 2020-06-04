@@ -1,13 +1,15 @@
 package com.example.marvel.view;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.ui.AppBarConfiguration;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,37 +18,46 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.marvel.R;
-import com.example.marvel.drawer.FragDeslizaMostra;
 import com.google.android.material.navigation.NavigationView;
 
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
-    Button personagens;
-    Button quadrinhos;
-    NavigationView navigationView;
-    DrawerLayout drawerLayout;
-    FragmentManager manager;
+    private Button personagens;
+    private Button quadrinhos;
+    private FragmentManager manager;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        setContentView(R.layout.navegation_drawer);
+        setContentView(R.layout.drawer_home);
+
+        Toolbar toolbar = findViewById(R.id.app_bar);
 
         personagens = findViewById(R.id.buttonPersonagens);
         quadrinhos = findViewById(R.id.buttonQuadrinhos);
-        navigationView = findViewById(R.id.nav_view);
+
         drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView.setNavigationItemSelectedListener(this);
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+
+        setSupportActionBar(toolbar);
+
+        AppBarConfiguration mAppBarConfiguration = new AppBarConfiguration.Builder()
+                .setDrawerLayout(drawerLayout)
+                .build();
+
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+        );
+
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
         manager = getSupportFragmentManager();
 
-//        hambugue.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            drawerLayout.openDrawer(GravityCompat.START);
-//            }
-//        });
         quadrinhos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,22 +73,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
+
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
+        int id = item.getItemId();
 
-            case R.id.deslizamostra:
-                vaPara(new FragDeslizaMostra());
-                break;
+        if(id == R.id.nav_favoritos){
+            startActivity(new Intent(this, PersonagensActivity.class));
         }
         drawerLayout.closeDrawer(GravityCompat.START);
-        return false;
-    }
-
-    public void vaPara(Fragment fragment) {
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.nav_home, fragment);
-        transaction.commit();
+        return true;
     }
 }

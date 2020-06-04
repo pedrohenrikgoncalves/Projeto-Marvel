@@ -20,7 +20,7 @@ class AdapterPersonagens(private val personagensList: MutableSet<Personagem>) : 
     override fun onBindViewHolder(viewHolderPersonagens: ViewHolderPersonagem, position: Int) {
         val personage = personagensList.elementAt(position)
         viewHolderPersonagens.heroi.text = personage.name
-        Picasso.get().load(personage.thumbnail.path + ".jpg")
+        Picasso.get().load(personage.thumbnail.path + ".jpg").error(R.drawable.logo_aplicativo)
                 .into(viewHolderPersonagens.imageView)
         viewHolderPersonagens.cardViewCharacters.setOnClickListener { view ->
             val intent = Intent(view.context, DetailPersonagens::class.java)
