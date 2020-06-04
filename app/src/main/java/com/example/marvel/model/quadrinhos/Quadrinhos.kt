@@ -1,4 +1,4 @@
-package com.example.marvel.model
+package com.example.marvel.model.quadrinhos
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

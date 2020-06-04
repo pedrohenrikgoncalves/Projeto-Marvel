@@ -7,8 +7,8 @@ import com.example.marvel.util.AppUse.md5
 
 class RepositoryMarvel {
     private var url = "https://gateway.marvel.com/v1/public/"
-    private var privateKey = "ceac13aef2089eaf3c704ba9da60cf2156b60912"
-    private var publicKey = "fe81c0a4bd6c7f00e3df25d68d8d8a92"
+    private var privateKey = "6a4b25496c18713c3ca0fc8daaef07bbb6e6fa18"
+    private var publicKey = "8dd211728410e53bae39204821f2a306"
     var ts: String = (System.currentTimeMillis() / 1000).toString()
     var hash: String = md5(ts+privateKey+publicKey)
     private var service = ServiceMarvel::class

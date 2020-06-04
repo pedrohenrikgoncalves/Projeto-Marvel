@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
-import com.example.marvel.model.Quadrinhos
+import com.example.marvel.model.quadrinhos.Quadrinhos
 import com.example.marvel.view.DetailQuadrinhos
 
 class AdapterQuadrinhos(private val quadrinhosList: List<Quadrinhos>) : RecyclerView.Adapter<ViewHolderQuadrinhos>() {

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
 import com.example.marvel.adapter.AdapterQuadrinhos
-import com.example.marvel.model.Quadrinhos
+import com.example.marvel.model.quadrinhos.Quadrinhos
 import java.util.*
 
 class QuadrinhosActivity : AppCompatActivity() {
