@@ -2,11 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="130dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_characters"
+        android:id="@+id/card_view_creators"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
@@ -27,29 +28,29 @@
 
 
             <ImageView
-                android:id="@+id/imageCharacters"
+                android:id="@+id/imageCreators"
                 android:layout_width="100dp"
                 android:layout_height="80dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/marvel_login" />
 
             <TextView
-                android:id="@+id/text_characters"
+                android:id="@+id/text_creators"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="HEROI"
+                android:text="CRIADORES"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/textColor"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageCharacters"
+                app:layout_constraintEnd_toStartOf="@+id/imageCreators"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

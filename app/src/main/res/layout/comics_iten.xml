@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="130dp">
 
@@ -12,7 +13,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="20dp"
         app:cardBackgroundColor="@color/colorSplash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,14 +27,12 @@
 
 
             <ImageView
-                android:id="@+id/imagePersonagens"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="16dp"
+                android:id="@+id/imageComics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/text_titulo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/marvel_login" />
@@ -42,7 +40,8 @@
             <TextView
                 android:id="@+id/text_titulo"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Titulo"
                 android:textAlignment="center"
@@ -50,37 +49,37 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/text_edicao"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imagePersonagens"
+                app:layout_constraintStart_toEndOf="@+id/imageComics"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/text_edicao"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
                 android:text="Edição"
                 android:textAlignment="textStart"
                 android:textColor="@color/colorAccent"
                 android:textSize="15dp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/text_ano"
-                app:layout_constraintStart_toEndOf="@+id/imagePersonagens"
-                app:layout_constraintTop_toBottomOf="@+id/text_titulo" />
+                app:layout_constraintStart_toEndOf="@+id/imageComics" />
 
             <TextView
                 android:id="@+id/text_ano"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:text="Ano"
-                android:textAlignment="textStart"
+                android:textAlignment="viewEnd"
                 android:textColor="@color/colorAccent"
                 android:textSize="15dp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/text_edicao"
-                app:layout_constraintTop_toBottomOf="@+id/text_titulo" />
+                app:layout_constraintStart_toEndOf="@+id/text_edicao" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

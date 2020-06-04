@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
 import com.example.marvel.adapter.AdapterQuadrinhos
-import com.example.marvel.model.quadrinhos.RespostaQuadrinhos
+import com.example.marvel.model.quadrinhos.Quadrinhos
 import com.example.marvel.viewmodel.ViewModelMarvel
 
 class QuadrinhosActivity : AppCompatActivity() {
 
-    private var results = mutableSetOf<RespostaQuadrinhos>()
+    private var results = mutableSetOf<Quadrinhos>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

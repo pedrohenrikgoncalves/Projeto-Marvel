@@ -20,7 +20,6 @@ class PersonagensActivity : AppCompatActivity() {
         setContentView(R.layout.activity_personagens)
         val recycler = findViewById<RecyclerView>(R.id.recycler_personagens)
         val viewModelCharacter =  ViewModelProviders.of(this).get(ViewModelMarvel::class.java)
-        //config recycler
         val adapterCharacter = AdapterPersonagens(results)
         recycler.adapter = adapterCharacter
         val layoutManager = LinearLayoutManager(this)

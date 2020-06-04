@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
-import com.example.marvel.model.quadrinhos.RespostaQuadrinhos
+import com.example.marvel.model.quadrinhos.Quadrinhos
 import com.example.marvel.view.DetailQuadrinhos
 import com.squareup.picasso.Picasso
 
-class AdapterQuadrinhos(private val quadrinhosList: MutableSet<RespostaQuadrinhos>) : RecyclerView.Adapter<ViewHolderQuadrinhos>() {
+class AdapterQuadrinhos(private val quadrinhosList: MutableSet<Quadrinhos>) : RecyclerView.Adapter<ViewHolderQuadrinhos>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolderQuadrinhos {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.comics_iten, viewGroup, false)
