@@ -1,12 +1,10 @@
 package com.example.marvel.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.marvel.R;
 import com.example.marvel.model.personagens.Personagem;
 import com.squareup.picasso.Picasso;
