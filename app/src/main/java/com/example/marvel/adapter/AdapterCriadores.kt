@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
 import com.example.marvel.model.criadores.Criadores
 import com.example.marvel.view.DetailCriadores
-import com.example.marvel.view.DetailPersonagens
 import com.squareup.picasso.Picasso
 
 class AdapterCriadores(private val criadoresList: MutableSet<Criadores>) : RecyclerView.Adapter<ViewHolderCriadores>() {
@@ -20,7 +19,7 @@ class AdapterCriadores(private val criadoresList: MutableSet<Criadores>) : Recyc
 
     override fun onBindViewHolder(viewHolderCriadores: ViewHolderCriadores, position: Int) {
         val criadores = criadoresList.elementAt(position)
-        viewHolderCriadores.criador.text = criadores.firstName
+        viewHolderCriadores.creators.text = criadores.firstName
         Picasso.get().load(criadores.thumbnail.path + ".jpg").error(R.drawable.logo_aplicativo)
                 .into(viewHolderCriadores.imageView)
         viewHolderCriadores.cardViewCreators.setOnClickListener { view ->

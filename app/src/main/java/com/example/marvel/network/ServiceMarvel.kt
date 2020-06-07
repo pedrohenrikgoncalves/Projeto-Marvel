@@ -1,6 +1,7 @@
 package com.example.marvel.network
 
 import com.example.marvel.model.criadores.RespostaCriadores
+import com.example.marvel.model.eventos.RespostaEventos
 import com.example.marvel.model.personagens.RespostaPersonagens
 import com.example.marvel.model.quadrinhos.RespostaQuadrinhos
 import retrofit2.http.GET
@@ -28,4 +29,11 @@ interface ServiceMarvel {
             @Query("hash") hash : String ,
             @Query("apikey") apikey : String
     ) : RespostaCriadores
+
+    @GET("events")
+    suspend fun getServiceEvents(
+            @Query("ts") ts : String ,
+            @Query("hash") hash : String ,
+            @Query("apikey") apikey : String
+    ) : RespostaEventos
 }

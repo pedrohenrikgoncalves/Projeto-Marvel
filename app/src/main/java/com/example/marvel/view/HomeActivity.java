@@ -1,4 +1,5 @@
 package com.example.marvel.view;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +21,7 @@ import com.example.marvel.R;
 import com.google.android.material.navigation.NavigationView;
 
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button personagens, criadores, eventos, quadrinhos;
     private FragmentManager manager;
@@ -80,15 +81,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
-
-
+        eventos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 Intent intent = new Intent(getApplicationContext(), EventosActivity.class);
+                 startActivity(intent);
+            }
+        });
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.nav_favoritos){
+        if (id == R.id.nav_favoritos) {
             startActivity(new Intent(this, PersonagensActivity.class));
         }
         drawerLayout.closeDrawer(GravityCompat.START);

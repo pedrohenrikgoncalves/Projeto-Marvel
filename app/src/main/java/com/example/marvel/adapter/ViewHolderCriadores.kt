@@ -9,6 +9,6 @@ import com.example.marvel.R
 
 class ViewHolderCriadores (itemView: View) : RecyclerView.ViewHolder(itemView){
     var imageView: ImageView = itemView.findViewById(R.id.imageCreators)
-    var criador: TextView = itemView.findViewById(R.id.text_creators)
+    var creators: TextView = itemView.findViewById(R.id.text_creators)
     var cardViewCreators: CardView = itemView.findViewById(R.id.card_view_creators)
 }

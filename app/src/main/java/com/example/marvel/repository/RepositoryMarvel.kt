@@ -1,6 +1,7 @@
 package com.example.marvel.repository
 
 import com.example.marvel.model.criadores.RespostaCriadores
+import com.example.marvel.model.eventos.RespostaEventos
 import com.example.marvel.model.personagens.RespostaPersonagens
 import com.example.marvel.model.quadrinhos.Quadrinhos
 import com.example.marvel.model.quadrinhos.RespostaQuadrinhos
@@ -29,5 +30,9 @@ class RepositoryMarvel {
 
     suspend fun  getCreators() : RespostaCriadores {
         return serviceInit.getServiceCreators(ts, hash, publicKey)
+    }
+
+    suspend fun getEvents() : RespostaEventos {
+        return serviceInit.getServiceEvents(ts, hash, publicKey)
     }
 }

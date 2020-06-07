@@ -14,7 +14,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".view.DetailCriadores"></activity>
+        <activity android:name=".view.DetailEventos" />
+        <activity android:name=".view.EventosActivity" />
+        <activity android:name=".view.DetailCriadores" />
         <activity android:name=".view.CriadoresActivity" />
         <activity
             android:name=".view.QuadrinhosActivity"

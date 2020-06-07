@@ -3,6 +3,7 @@ package com.example.marvel.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.marvel.model.criadores.Criadores
+import com.example.marvel.model.eventos.Eventos
 import com.example.marvel.model.personagens.Personagens
 import com.example.marvel.model.quadrinhos.Quadrinhos
 import com.example.marvel.repository.RepositoryMarvel
@@ -38,6 +39,15 @@ class ViewModelMarvel : ViewModel() {
     fun getAllCreators() = CoroutineScope(IO).launch {
         repositoMarvel.getCreators().let {
             listCreators.postValue(it.data.results)
+        }
+    }
+
+    val listEvents = MutableLiveData<MutableSet<Eventos>>()
+    private  val repositMarvel = RepositoryMarvel()
+
+    fun getAllEvents() = CoroutineScope(IO).launch {
+        repositMarvel.getEvents().let {
+            listEvents.postValue(it.data.results)
         }
     }
 }
