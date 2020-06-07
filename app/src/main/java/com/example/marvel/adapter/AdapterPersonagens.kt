@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
-import com.example.marvel.model.personagens.Personagem
+import com.example.marvel.model.personagens.Personagens
 import com.example.marvel.view.DetailPersonagens
 import com.squareup.picasso.Picasso
 
-class AdapterPersonagens(private val personagensList: MutableSet<Personagem>) : RecyclerView.Adapter<ViewHolderPersonagem>() {
+class AdapterPersonagens(private val personagensList: MutableSet<Personagens>) : RecyclerView.Adapter<ViewHolderPersonagens>() {
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolderPersonagem {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolderPersonagens {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.characters_iten, viewGroup, false)
-        return ViewHolderPersonagem(view)
+        return ViewHolderPersonagens(view)
     }
 
-    override fun onBindViewHolder(viewHolderPersonagens: ViewHolderPersonagem, position: Int) {
+    override fun onBindViewHolder(viewHolderPersonagens: ViewHolderPersonagens, position: Int) {
         val personage = personagensList.elementAt(position)
         viewHolderPersonagens.heroi.text = personage.name
         Picasso.get().load(personage.thumbnail.path + ".jpg").error(R.drawable.logo_aplicativo)

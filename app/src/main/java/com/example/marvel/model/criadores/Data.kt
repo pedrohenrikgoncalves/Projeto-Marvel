@@ -1,9 +1,9 @@
-package com.example.marvel.model.personagens
+package com.example.marvel.model.criadores
 
 data class Data(
         val count: Int,
         val limit: Int,
         val offset: Int,
-        val results: MutableSet<Personagens>,
+        val results: MutableSet<Criadores>,
         val total: Int
 )

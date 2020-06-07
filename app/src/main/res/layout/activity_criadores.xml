@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".view.CreatorsActivity">
+    tools:context=".view.CriadoresActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_creators"
+        android:id="@+id/recycler_criadores"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

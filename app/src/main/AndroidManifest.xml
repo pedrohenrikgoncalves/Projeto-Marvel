@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".view.CreatorsActivity" />
+        <activity android:name=".view.DetailCriadores"></activity>
+        <activity android:name=".view.CriadoresActivity" />
         <activity
             android:name=".view.QuadrinhosActivity"
             android:screenOrientation="portrait" />

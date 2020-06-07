@@ -2,9 +2,9 @@ package com.example.marvel.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.marvel.model.personagens.Personagem
+import com.example.marvel.model.criadores.Criadores
+import com.example.marvel.model.personagens.Personagens
 import com.example.marvel.model.quadrinhos.Quadrinhos
-import com.example.marvel.model.quadrinhos.RespostaQuadrinhos
 import com.example.marvel.repository.RepositoryMarvel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class ViewModelMarvel : ViewModel() {
 
-    val listCharacter = MutableLiveData<MutableSet<Personagem>>()
+    val listCharacter = MutableLiveData<MutableSet<Personagens>>()
     private val repositoryMarvel = RepositoryMarvel()
 
 
@@ -31,8 +31,13 @@ class ViewModelMarvel : ViewModel() {
             listComics.postValue(it.data.results)
         }
     }
-}
 
-private fun Any.postValue(results: List<Quadrinhos>) {
+    val listCreators = MutableLiveData<MutableSet<Criadores>>()
+    private val repositoMarvel = RepositoryMarvel()
 
+    fun getAllCreators() = CoroutineScope(IO).launch {
+        repositoMarvel.getCreators().let {
+            listCreators.postValue(it.data.results)
+        }
+    }
 }

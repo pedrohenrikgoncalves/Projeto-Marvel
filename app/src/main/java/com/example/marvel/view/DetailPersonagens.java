@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.marvel.R;
-import com.example.marvel.model.personagens.Personagem;
+import com.example.marvel.model.personagens.Personagens;
 import com.squareup.picasso.Picasso;
 
 public class DetailPersonagens extends AppCompatActivity {
@@ -26,7 +26,7 @@ public class DetailPersonagens extends AppCompatActivity {
         favorite = findViewById(R.id.btn_character);
 
         if(getIntent() != null){
-            Personagem personagem = getIntent().getExtras().getParcelable("Heroi");
+            Personagens personagem = getIntent().getExtras().getParcelable("Heroi");
             if(personagem.getDescription().isEmpty()) {
                 descripiton.setText(R.string.descri_off);
             } else {

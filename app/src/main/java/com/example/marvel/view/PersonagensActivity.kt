@@ -6,14 +6,15 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
+import com.example.marvel.adapter.AdapterCriadores
 import com.example.marvel.adapter.AdapterPersonagens
-import com.example.marvel.model.personagens.Personagem
+import com.example.marvel.model.personagens.Personagens
 import com.example.marvel.viewmodel.ViewModelMarvel
 
 
 class PersonagensActivity : AppCompatActivity() {
 
-    private var results = mutableSetOf<Personagem>()
+    private var results = mutableSetOf<Personagens>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
