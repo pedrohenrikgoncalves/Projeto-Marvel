@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Quadrinhos(
+data class Comic(
     val characters: Characters,
     val collectedIssues: List<CollectedIssue>,
     val collections: List<String>,

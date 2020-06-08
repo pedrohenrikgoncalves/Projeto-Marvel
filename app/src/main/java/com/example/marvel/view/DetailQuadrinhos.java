@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.marvel.R;
-import com.example.marvel.model.quadrinhos.Quadrinhos;
+import com.example.marvel.model.quadrinhos.Comic;
 import com.squareup.picasso.Picasso;
 
 public class DetailQuadrinhos extends AppCompatActivity {
@@ -25,7 +27,7 @@ public class DetailQuadrinhos extends AppCompatActivity {
         favorite = findViewById(R.id.btn_comics);
 
         if(getIntent() != null){
-            Quadrinhos quadrinho = getIntent().getExtras().getParcelable("Titulo");
+            Comic quadrinho = getIntent().getExtras().getParcelable("Titulo");
             if(quadrinho.getDescription().isEmpty()) {
                 description.setText(R.string.descri_off);
             } else {
@@ -34,6 +36,8 @@ public class DetailQuadrinhos extends AppCompatActivity {
             title.setText(quadrinho.getTitle());
             Picasso.get().load(quadrinho.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageBackgro);
             Picasso.get().load(quadrinho.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageComics);
+        } else {
+            Toast.makeText(this, "Problemas com servidor", Toast.LENGTH_LONG).show();
         }
     }
 }

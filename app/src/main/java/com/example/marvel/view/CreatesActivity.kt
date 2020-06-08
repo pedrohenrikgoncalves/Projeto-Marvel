@@ -11,7 +11,7 @@ import com.example.marvel.model.criadores.Criadores
 import com.example.marvel.viewmodel.ViewModelMarvel
 
 
-class CriadoresActivity : AppCompatActivity() {
+class CreatesActivity : AppCompatActivity() {
 
     private var results = mutableSetOf<Criadores>()
 

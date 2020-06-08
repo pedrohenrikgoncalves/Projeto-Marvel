@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.marvel.model.criadores.Criadores
 import com.example.marvel.model.eventos.Eventos
 import com.example.marvel.model.personagens.Personagens
-import com.example.marvel.model.quadrinhos.Quadrinhos
+import com.example.marvel.model.quadrinhos.Comic
 import com.example.marvel.repository.RepositoryMarvel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 class ViewModelMarvel : ViewModel() {
 
     val listCharacter = MutableLiveData<MutableSet<Personagens>>()
+    val loading = MutableLiveData<Boolean>()
     private val repositoryMarvel = RepositoryMarvel()
 
 
@@ -24,13 +25,15 @@ class ViewModelMarvel : ViewModel() {
         }
     }
 
-    val listComics = MutableLiveData<MutableSet<Quadrinhos>>()
+    val listComics = MutableLiveData<MutableSet<Comic>>()
     private val repositorMarvel = RepositoryMarvel()
 
     fun getAllComics() = CoroutineScope(IO).launch {
+        loading.postValue(true)
         repositorMarvel.getComics().let {
             listComics.postValue(it.data.results)
         }
+        loading.postValue(false)
     }
 
     val listCreators = MutableLiveData<MutableSet<Criadores>>()
