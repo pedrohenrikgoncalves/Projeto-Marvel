@@ -1,9 +1,9 @@
 package com.example.marvel.repository
 
-import com.example.marvel.model.criadores.RespostaCriadores
-import com.example.marvel.model.eventos.RespostaEventos
-import com.example.marvel.model.personagens.RespostaPersonagens
-import com.example.marvel.model.quadrinhos.RespostaQuadrinhos
+import com.example.marvel.model.creators.ResultsCreators
+import com.example.marvel.model.events.ResultsEvents
+import com.example.marvel.model.characters.ResultsCharacters
+import com.example.marvel.model.comics.ResultsComics
 import com.example.marvel.network.RetroInit
 import com.example.marvel.network.ServiceMarvel
 import com.example.marvel.util.AppUse.md5
@@ -19,19 +19,19 @@ class RepositoryMarvel {
     //realizando a conexão com a api atraves do retroInit
     private var serviceInit = RetroInit(url).create(service)
 
-    suspend fun getCharacters() : RespostaPersonagens {
+    suspend fun getCharacters() : ResultsCharacters {
         return serviceInit.getServiceCharacters(ts, hash, publicKey)
     }
 
-    suspend fun getComics() : RespostaQuadrinhos {
+    suspend fun getComics() : ResultsComics {
         return serviceInit.getServiceComics(ts, hash, publicKey)
     }
 
-    suspend fun  getCreators() : RespostaCriadores {
+    suspend fun  getCreators() : ResultsCreators {
         return serviceInit.getServiceCreators(ts, hash, publicKey)
     }
 
-    suspend fun getEvents() : RespostaEventos {
+    suspend fun getEvents() : ResultsEvents {
         return serviceInit.getServiceEvents(ts, hash, publicKey)
     }
 }

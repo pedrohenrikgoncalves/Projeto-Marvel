@@ -2,10 +2,10 @@ package com.example.marvel.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.marvel.model.criadores.Criadores
-import com.example.marvel.model.eventos.Eventos
-import com.example.marvel.model.personagens.Personagens
-import com.example.marvel.model.quadrinhos.Comic
+import com.example.marvel.model.creators.Creators
+import com.example.marvel.model.events.Events
+import com.example.marvel.model.characters.Characters
+import com.example.marvel.model.comics.Comic
 import com.example.marvel.repository.RepositoryMarvel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class ViewModelMarvel : ViewModel() {
 
-    val listCharacter = MutableLiveData<MutableSet<Personagens>>()
+    val listCharacter = MutableLiveData<MutableSet<Characters>>()
     val loading = MutableLiveData<Boolean>()
     private val repositoryMarvel = RepositoryMarvel()
 
@@ -36,7 +36,7 @@ class ViewModelMarvel : ViewModel() {
         loading.postValue(false)
     }
 
-    val listCreators = MutableLiveData<MutableSet<Criadores>>()
+    val listCreators = MutableLiveData<MutableSet<Creators>>()
     private val repositoMarvel = RepositoryMarvel()
 
     fun getAllCreators() = CoroutineScope(IO).launch {
@@ -45,7 +45,7 @@ class ViewModelMarvel : ViewModel() {
         }
     }
 
-    val listEvents = MutableLiveData<MutableSet<Eventos>>()
+    val listEvents = MutableLiveData<MutableSet<Events>>()
     private  val repositMarvel = RepositoryMarvel()
 
     fun getAllEvents() = CoroutineScope(IO).launch {

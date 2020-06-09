@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         quadrinhos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), QuadrinhosActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ComicsActivity.class);
                 startActivity(intent);
             }
         });
@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PersonagensActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CharactersActivity.class);
                 startActivity(intent);
             }
         });
@@ -84,7 +84,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         eventos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 Intent intent = new Intent(getApplicationContext(), EventosActivity.class);
+                 Intent intent = new Intent(getApplicationContext(), EventsActivity.class);
                  startActivity(intent);
             }
         });
@@ -95,7 +95,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_favoritos) {
-            startActivity(new Intent(this, PersonagensActivity.class));
+            startActivity(new Intent(this, CharactersActivity.class));
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

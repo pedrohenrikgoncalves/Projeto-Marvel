@@ -14,21 +14,21 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".view.DetailEventos" />
-        <activity android:name=".view.EventosActivity" />
-        <activity android:name=".view.DetailCriadores" />
+        <activity android:name=".view.DetailEvents" />
+        <activity android:name=".view.EventsActivity" />
+        <activity android:name=".view.DetailCreators" />
         <activity android:name=".view.CreatesActivity" />
         <activity
-            android:name=".view.QuadrinhosActivity"
+            android:name=".view.ComicsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.DetailPersonagens"
+            android:name=".view.DetailCharacters"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.DetailQuadrinhos"
+            android:name=".view.DetailComics"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.PersonagensActivity"
+            android:name=".view.CharactersActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.RegisterActivity"
