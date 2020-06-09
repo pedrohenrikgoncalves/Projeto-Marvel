@@ -34,7 +34,6 @@ class ComicsActivity : AppCompatActivity() {
             it?.let { itChar -> results.addAll(itChar) }
             adapterComics.notifyDataSetChanged()
         })
-
         viewModelComics.loading.observe(this, Observer { loading ->
             if (loading) {
                 progressbar.visibility = View.VISIBLE

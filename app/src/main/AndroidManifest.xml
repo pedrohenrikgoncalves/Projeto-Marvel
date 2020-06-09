@@ -17,7 +17,7 @@
         <activity android:name=".view.DetailEvents" />
         <activity android:name=".view.EventsActivity" />
         <activity android:name=".view.DetailCreators" />
-        <activity android:name=".view.CreatesActivity" />
+        <activity android:name=".view.CreatorsActivity" />
         <activity
             android:name=".view.ComicsActivity"
             android:screenOrientation="portrait" />

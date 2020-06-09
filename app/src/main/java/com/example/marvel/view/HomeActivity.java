@@ -77,7 +77,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         criadores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), CreatesActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CreatorsActivity.class);
                 startActivity(intent);
             }
         });

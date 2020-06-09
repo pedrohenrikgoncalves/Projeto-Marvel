@@ -22,7 +22,9 @@ class ViewModelMarvel : ViewModel() {
     fun getAllCharacters() = CoroutineScope(IO).launch {
         repositoryMarvel.getCharacters().let {
             listCharacter.postValue(it.data.results)
+            loading.postValue(true)
         }
+        loading.postValue(false)
     }
 
     val listComics = MutableLiveData<MutableSet<Comic>>()
@@ -40,17 +42,21 @@ class ViewModelMarvel : ViewModel() {
     private val repositoMarvel = RepositoryMarvel()
 
     fun getAllCreators() = CoroutineScope(IO).launch {
+        loading.postValue(true)
         repositoMarvel.getCreators().let {
             listCreators.postValue(it.data.results)
         }
+        loading.postValue(false)
     }
 
     val listEvents = MutableLiveData<MutableSet<Events>>()
     private  val repositMarvel = RepositoryMarvel()
 
     fun getAllEvents() = CoroutineScope(IO).launch {
+        loading.postValue(true)
         repositMarvel.getEvents().let {
             listEvents.postValue(it.data.results)
         }
+        loading.postValue(false)
     }
 }
