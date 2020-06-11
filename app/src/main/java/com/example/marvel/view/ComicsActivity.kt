@@ -22,7 +22,7 @@ class ComicsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_comics)
         val recycler = findViewById<RecyclerView>(R.id.recycler_comics)
         val progressbar = findViewById<ProgressBar>(R.id.progressBar)
-        val viewModelComics =  ViewModelProviders.of(this).get(ViewModelMarvel::class.java)
+        val viewModelComics = ViewModelProviders.of(this).get(ViewModelMarvel::class.java)
 
         val adapterComics = AdapterComics(results)
         recycler.adapter = adapterComics
@@ -31,7 +31,14 @@ class ComicsActivity : AppCompatActivity() {
 
         viewModelComics.getAllComics()
         viewModelComics.listComics.observe(this, androidx.lifecycle.Observer {
-            it?.let { itChar -> results.addAll(itChar) }
+            it?.let {
+                it.forEach { comics ->
+                    if (!comics.thumbnail.path.contains("image_not_available")) {
+                        results.add(comics)
+                    }
+
+                }
+            }
             adapterComics.notifyDataSetChanged()
         })
         viewModelComics.loading.observe(this, Observer { loading ->

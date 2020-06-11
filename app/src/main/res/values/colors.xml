@@ -3,7 +3,10 @@
     <color name="colorPrimary">#E1001D</color>
     <color name="colorPrimaryDark">#002336</color>
     <color name="colorAccent">#8F8A8A</color>
-    <color name="redcolor">#EA2427</color>
+    <color name="redcolor">#CF001C</color>
+    <color name="backred">#9d0c0f</color>
     <color name="colorSplash">#1E1C1C</color>
     <color name="textColor">#FFFFFF</color>
+    <color name="editTexts">#A5FFFFFF</color>
+    <color name="texts">#D1D1D1</color>
 </resources>

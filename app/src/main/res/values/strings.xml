@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Marvel</string>
-    <string name="imagem">nome</string>
+    <string name="imagem">name</string>
     <string name="drawerlayout_header">drawerlayout_header</string>
-    <string name="action_settings">configurações</string>
+    <string name="action_settings">settings</string>
     <string name="menu_slideshow">slideshow</string>
     <string name="menu_gallery">gallery</string>
     <string name="menu_home">home</string>
@@ -24,4 +24,12 @@
     <string name="btn_comics">COMICS</string>
     <string name="btn_events">EVENTS</string>
     <string name="btn_creators">CREATORS</string>
+    <string name="password">Password</string>
+    <string name="email">Email address</string>
+    <string name="register">SIGN UP</string>
+    <string name="sign">LOG IN</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="confirmpassword">Confirm Password</string>
+
 </resources>

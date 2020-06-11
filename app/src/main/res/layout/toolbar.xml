@@ -1,31 +1,29 @@
-<com.google.android.material.appbar.AppBarLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/wld_toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
-    >
+    android:background="@color/backred">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/app_bar"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/app_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:layout_marginStart="100dp"
+            android:text="@string/welcome"
+            android:textColor="@color/textColor" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:textColor="@color/textColor"
-                android:text="@string/welcome"/>
-
-                <TextView
-                 android:id="@+id/bemvindo_usuario"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                  android:layout_marginStart="10dp"
-                 android:textColor="@color/textColor"
-                   android:text="@string/welcome_user"/>
-         </androidx.appcompat.widget.Toolbar>
+        <TextView
+            android:id="@+id/welcome_usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/welcome_user"
+            android:textColor="@color/textColor" />
+    </androidx.appcompat.widget.Toolbar>
 
 </com.google.android.material.appbar.AppBarLayout>

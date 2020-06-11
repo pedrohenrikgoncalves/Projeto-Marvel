@@ -27,9 +27,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         buttonEnviar = findViewById(R.id.enviar);
-        senha = findViewById(R.id.senha);
+        senha = findViewById(R.id.password);
         email = findViewById(R.id.email);
-        cadastro = findViewById(R.id.cadastro);
+        cadastro = findViewById(R.id.register);
 
         cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (textoNome.isEmpty() || textoEmail.isEmpty()) {
-                    Toast.makeText(activity, "Por favor preencha todos os campos!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(activity, "Please! Fill in all the fields.", Toast.LENGTH_LONG).show();
                 } else {
                     Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(intent);
