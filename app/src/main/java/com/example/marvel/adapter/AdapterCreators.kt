@@ -25,7 +25,7 @@ class AdapterCreators(private val creatorsList: MutableSet<Creators>) : Recycler
         viewHolderCreators.cardViewCreators.setOnClickListener { view ->
             val intent = Intent(view.context, DetailCreators::class.java)
             val bundle = Bundle()
-            bundle.putParcelable("creator", creators)
+            bundle.putParcelable("Creator", creators)
             intent.putExtras(bundle)
             view.context.startActivity(intent)
         }

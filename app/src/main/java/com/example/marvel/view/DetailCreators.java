@@ -29,7 +29,7 @@ public class DetailCreators extends AppCompatActivity {
         favorite = findViewById(R.id.btn_creators);
 
         if (getIntent() != null) {
-            Characters creators = getIntent().getExtras().getParcelable("creator");
+            Characters creators = getIntent().getExtras().getParcelable("Creator");
             if (creators.getDescription().isEmpty()) {
                 descripiton.setText(R.string.descri_off);
             } else {

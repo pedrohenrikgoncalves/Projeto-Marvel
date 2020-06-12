@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.marvel.R;
 import com.example.marvel.model.characters.Characters;
+import com.example.marvel.model.events.Events;
 import com.squareup.picasso.Picasso;
 
 public class DetailEvents extends AppCompatActivity {
@@ -29,13 +30,13 @@ public class DetailEvents extends AppCompatActivity {
         favorite = findViewById(R.id.btn_events);
 
         if (getIntent() != null) {
-            Characters events = getIntent().getExtras().getParcelable("event");
+            Events events = getIntent().getExtras().getParcelable("Event");
             if (events.getDescription().isEmpty()) {
                 descripiton.setText(R.string.descri_off);
             } else {
                 descripiton.setText(events.getDescription());
             }
-            title.setText(events.getName());
+            title.setText(events.getTitle());
             Picasso.get().load(events.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageBackground);
             Picasso.get().load(events.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageEvents);
         }
