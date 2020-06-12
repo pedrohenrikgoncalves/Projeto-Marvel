@@ -42,9 +42,9 @@
             android:drawableLeft="@drawable/icon_email"
             android:drawablePadding="5dp"
             android:hint="@string/email"
-            android:inputType="textCapSentences"
             android:textColor="@color/texts"
-            android:textColorHint="@color/editTexts" />
+            android:textColorHint="@color/editTexts"
+            android:inputType="textEmailAddress"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,8 +58,7 @@
         android:textColorHint="@color/editTexts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail"
-        android:inputType="textCapSentences">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
@@ -70,7 +69,7 @@
             android:hint="@string/password"
             android:textColor="@color/texts"
             android:textColorHint="@color/editTexts"
-            android:inputType="textCapSentences"/>
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
