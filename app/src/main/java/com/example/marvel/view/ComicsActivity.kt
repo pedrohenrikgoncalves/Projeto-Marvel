@@ -36,7 +36,6 @@ class ComicsActivity : AppCompatActivity() {
                     if (!comics.thumbnail.path.contains("image_not_available")) {
                         results.add(comics)
                     }
-
                 }
             }
             adapterComics.notifyDataSetChanged()

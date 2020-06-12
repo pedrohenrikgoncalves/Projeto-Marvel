@@ -31,7 +31,13 @@ class CharactersActivity : AppCompatActivity() {
 
         viewModelCharacter.getAllCharacters()
         viewModelCharacter.listCharacter.observe(this, androidx.lifecycle.Observer {
-            it?.let { itChar -> results.addAll(itChar) }
+            it?.let {
+                it.forEach { character ->
+                    if (!character.thumbnail.path.contains("image_not_available")) {
+                        results.add(character)
+                    }
+                }
+            }
             adapterCharacter.notifyDataSetChanged()
         })
         viewModelCharacter.loading.observe(this, Observer { loading ->

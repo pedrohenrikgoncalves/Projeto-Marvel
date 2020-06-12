@@ -30,7 +30,13 @@ private var results = mutableSetOf<Events>()
 
     viewModelEvents.getAllEvents()
     viewModelEvents.listEvents.observe(this, androidx.lifecycle.Observer {
-        it?.let { itChar -> results.addAll(itChar) }
+        it?.let {
+            it.forEach { events ->
+                if (!events.thumbnail.path.contains("image_not_available")) {
+                    results.add(events)
+                }
+            }
+        }
         adapterEvents.notifyDataSetChanged()
     })
         viewModelEvents.loading.observe(this, Observer { loading ->

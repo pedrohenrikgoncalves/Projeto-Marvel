@@ -33,7 +33,13 @@ class CreatorsActivity : AppCompatActivity() {
 
         viewModelCreators.getAllCreators()
         viewModelCreators.listCreators.observe(this, androidx.lifecycle.Observer {
-            it?.let { itChar -> results.addAll(itChar) }
+            it?.let {
+                it.forEach { creators ->
+                    if (!creators.thumbnail.path.contains("image_not_available")){
+                        results.add(creators)
+                    }
+                }
+            }
             adapterCreators.notifyDataSetChanged()
         })
 
