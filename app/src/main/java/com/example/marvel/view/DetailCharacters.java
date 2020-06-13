@@ -23,7 +23,7 @@ public class DetailCharacters extends AppCompatActivity {
 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(getColor(R.color.colorSplash));
+        window.setStatusBarColor(getColor(R.color.topbar));
 
         imageCharacter = findViewById(R.id.img_characters);
         imageBackground = findViewById(R.id. img_characters_two);

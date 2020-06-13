@@ -9,4 +9,5 @@
     <color name="textColor">#FFFFFF</color>
     <color name="editTexts">#A5FFFFFF</color>
     <color name="texts">#D1D1D1</color>
+    <color name="topbar">#4B4B4B</color>
 </resources>
