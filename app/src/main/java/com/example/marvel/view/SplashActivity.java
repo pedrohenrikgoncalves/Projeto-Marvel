@@ -11,7 +11,7 @@ import com.example.marvel.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 6000;
+    private static int SPLASH_TIME_OUT = 6500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,15 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        playSound();
+    protected void onResume() {
+        super.onResume();
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                playSound();
+            }
+        }, 500);
     }
 
     private void playSound() {

@@ -41,12 +41,13 @@
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/editTexts"
             android:drawableLeft="@drawable/icon_username"
             android:drawablePadding="5dp"
             android:hint="@string/username"
+            android:inputType="textCapSentences"
             android:textColor="@color/texts"
-            android:textColorHint="@color/editTexts"
-            android:inputType="textCapSentences"/>
+            android:textColorHint="@color/editTexts" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -65,12 +66,13 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/editTexts"
             android:drawableLeft="@drawable/icon_email"
             android:drawablePadding="5dp"
             android:hint="@string/email"
+            android:inputType="textEmailAddress"
             android:textColor="@color/texts"
-            android:textColorHint="@color/editTexts"
-            android:inputType="textEmailAddress"/>
+            android:textColorHint="@color/editTexts" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,12 +93,13 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/editTexts"
             android:drawableLeft="@drawable/icon_password"
             android:drawablePadding="5dp"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:textColor="@color/texts"
-            android:textColorHint="@color/editTexts"
-            android:inputType="textPassword"/>
+            android:textColorHint="@color/editTexts" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -115,12 +118,13 @@
             android:id="@+id/confirm_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/editTexts"
             android:drawableLeft="@drawable/icon_password"
             android:drawablePadding="5dp"
             android:hint="@string/confirmpassword"
+            android:inputType="textPassword"
             android:textColor="@color/texts"
-            android:textColorHint="@color/editTexts"
-            android:inputType="textPassword"/>
+            android:textColorHint="@color/editTexts" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
