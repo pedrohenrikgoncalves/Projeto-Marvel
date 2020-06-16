@@ -8,10 +8,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.marvel.R;
-import com.example.marvel.model.characters.Characters;
-import com.example.marvel.model.events.Events;
+import com.example.marvel.model.events.ResultsEvents;
 import com.squareup.picasso.Picasso;
 
 public class DetailEvents extends AppCompatActivity {
@@ -36,7 +36,7 @@ public class DetailEvents extends AppCompatActivity {
         favorite = findViewById(R.id.btn_events);
 
         if (getIntent() != null) {
-            Events events = getIntent().getExtras().getParcelable("Event");
+            ResultsEvents.Data.Events events = getIntent().getExtras().getParcelable("Event");
             if (events.getDescription().isEmpty()) {
                 descripiton.setText(R.string.descri_off);
             } else {
@@ -45,6 +45,8 @@ public class DetailEvents extends AppCompatActivity {
             title.setText(events.getTitle());
             Picasso.get().load(events.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageBackground);
             Picasso.get().load(events.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageEvents);
+        }else {
+            Toast.makeText(this, R.string.problem_server, Toast.LENGTH_LONG).show();
         }
     }
 }

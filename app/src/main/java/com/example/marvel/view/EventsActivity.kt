@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
 import com.example.marvel.adapter.AdapterEvents
-import com.example.marvel.model.events.Events
+import com.example.marvel.model.events.ResultsEvents
 import com.example.marvel.viewmodel.ViewModelMarvel
 
 class EventsActivity : AppCompatActivity() {
 
-private var results = mutableSetOf<Events>()
+private var results = mutableSetOf<ResultsEvents.Data.Events>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +30,7 @@ private var results = mutableSetOf<Events>()
 
     viewModelEvents.getAllEvents()
     viewModelEvents.listEvents.observe(this, androidx.lifecycle.Observer {
-        it?.let {
-            it.forEach { events ->
-                if (!events.thumbnail.path.contains("image_not_available")) {
-                    results.add(events)
-                }
-            }
-        }
+        it?.let { itChar -> results.addAll(itChar) }
         adapterEvents.notifyDataSetChanged()
     })
         viewModelEvents.loading.observe(this, Observer { loading ->
@@ -44,7 +38,8 @@ private var results = mutableSetOf<Events>()
                 progressbar.visibility = View.VISIBLE
             } else {
                 progressbar.visibility = View.GONE
+                adapterEvents.notifyDataSetChanged()
             }
         })
-  }
+    }
 }

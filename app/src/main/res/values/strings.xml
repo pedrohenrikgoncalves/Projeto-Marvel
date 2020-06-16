@@ -31,5 +31,6 @@
     <string name="name">Name</string>
     <string name="username">Username</string>
     <string name="confirmpassword">Confirm Password</string>
+    <string name="problem_server">Problem with server</string>
 
 </resources>

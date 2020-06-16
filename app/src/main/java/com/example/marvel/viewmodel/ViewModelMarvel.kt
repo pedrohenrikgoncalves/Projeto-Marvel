@@ -2,10 +2,10 @@ package com.example.marvel.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.marvel.model.creators.Creators
-import com.example.marvel.model.events.Events
-import com.example.marvel.model.characters.Characters
-import com.example.marvel.model.comics.Comic
+import com.example.marvel.model.characters.ResultsCharacters
+import com.example.marvel.model.comics.ResultsComics
+import com.example.marvel.model.creators.ResultsCreators
+import com.example.marvel.model.events.ResultsEvents
 import com.example.marvel.repository.RepositoryMarvel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class ViewModelMarvel : ViewModel() {
 
-    val listCharacter = MutableLiveData<MutableSet<Characters>>()
+    val listCharacter = MutableLiveData<MutableSet<ResultsCharacters.Data.Characters>>()
     val loading = MutableLiveData<Boolean>()
     private val repositoryMarvel = RepositoryMarvel()
 
@@ -27,7 +27,7 @@ class ViewModelMarvel : ViewModel() {
         loading.postValue(false)
     }
 
-    val listComics = MutableLiveData<MutableSet<Comic>>()
+    val listComics = MutableLiveData<MutableSet<ResultsComics.Data.Comics>>()
     private val repositorMarvel = RepositoryMarvel()
 
     fun getAllComics() = CoroutineScope(IO).launch {
@@ -38,7 +38,7 @@ class ViewModelMarvel : ViewModel() {
         loading.postValue(false)
     }
 
-    val listCreators = MutableLiveData<MutableSet<Creators>>()
+    val listCreators = MutableLiveData<MutableSet<ResultsCreators.Data.Creators>>()
     private val repositoMarvel = RepositoryMarvel()
 
     fun getAllCreators() = CoroutineScope(IO).launch {
@@ -49,7 +49,7 @@ class ViewModelMarvel : ViewModel() {
         loading.postValue(false)
     }
 
-    val listEvents = MutableLiveData<MutableSet<Events>>()
+    val listEvents = MutableLiveData<MutableSet<ResultsEvents.Data.Events>>()
     private  val repositMarvel = RepositoryMarvel()
 
     fun getAllEvents() = CoroutineScope(IO).launch {

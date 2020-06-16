@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
 import com.example.marvel.adapter.AdapterCharacters
-import com.example.marvel.model.characters.Characters
+import com.example.marvel.model.characters.ResultsCharacters
 import com.example.marvel.viewmodel.ViewModelMarvel
 
 
 class CharactersActivity : AppCompatActivity() {
 
-    private var results = mutableSetOf<Characters>()
+    private var results = mutableSetOf<ResultsCharacters.Data.Characters>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +31,7 @@ class CharactersActivity : AppCompatActivity() {
 
         viewModelCharacter.getAllCharacters()
         viewModelCharacter.listCharacter.observe(this, androidx.lifecycle.Observer {
-            it?.let {
-                it.forEach { character ->
-                    if (!character.thumbnail.path.contains("image_not_available")) {
-                        results.add(character)
-                    }
-                }
-            }
+            it?.let { itChar -> results.addAll(itChar) }
             adapterCharacter.notifyDataSetChanged()
         })
         viewModelCharacter.loading.observe(this, Observer { loading ->
@@ -45,6 +39,7 @@ class CharactersActivity : AppCompatActivity() {
                 progressbar.visibility = View.VISIBLE
             } else {
                 progressbar.visibility = View.GONE
+            adapterCharacter.notifyDataSetChanged()
             }
         })
     }

@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
-import com.example.marvel.model.creators.Creators
+import com.example.marvel.model.creators.ResultsCreators
 import com.example.marvel.view.DetailCreators
 import com.squareup.picasso.Picasso
 
-class AdapterCreators(private val creatorsList: MutableSet<Creators>) : RecyclerView.Adapter<ViewHolderCreators>() {
+class AdapterCreators(private val creatorsList: MutableSet<ResultsCreators.Data.Creators>) : RecyclerView.Adapter<ViewHolderCreators>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolderCreators {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.creators_iten, viewGroup, false)

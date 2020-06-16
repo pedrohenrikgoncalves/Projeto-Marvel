@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
-import com.example.marvel.model.events.Events
+import com.example.marvel.model.events.ResultsEvents
 import com.example.marvel.view.DetailEvents
 import com.squareup.picasso.Picasso
 
-class AdapterEvents(private val eventsList: MutableSet<Events>) : RecyclerView.Adapter<ViewHolderEvents>() {
+class AdapterEvents(private val eventsList: MutableSet<ResultsEvents.Data.Events>) : RecyclerView.Adapter<ViewHolderEvents>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolderEvents {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.events_iten, viewGroup, false)

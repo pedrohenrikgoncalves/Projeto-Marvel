@@ -1,16 +1,16 @@
 package com.example.marvel.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.marvel.R;
-import com.example.marvel.model.characters.Characters;
+import com.example.marvel.model.creators.ResultsCreators;
 import com.squareup.picasso.Picasso;
 
 public class DetailCreators extends AppCompatActivity {
@@ -35,15 +35,17 @@ public class DetailCreators extends AppCompatActivity {
         favorite = findViewById(R.id.btn_creators);
 
         if (getIntent() != null) {
-            Characters creators = getIntent().getExtras().getParcelable("Creator");
-            if (creators.getDescription().isEmpty()) {
+            ResultsCreators.Data.Creators creators = getIntent().getExtras().getParcelable("Creator");
+            if (creators.getResourceURI().isEmpty()) {
                 descripiton.setText(R.string.descri_off);
             } else {
-                descripiton.setText(creators.getDescription());
+                descripiton.setText(creators.getResourceURI());
             }
-            title.setText(creators.getName());
+            title.setText(creators.getFullName());
             Picasso.get().load(creators.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageBackground);
             Picasso.get().load(creators.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageCreators);
+        }else {
+            Toast.makeText(this, R.string.problem_server, Toast.LENGTH_LONG).show();
         }
     }
 }

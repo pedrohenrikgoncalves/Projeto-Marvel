@@ -2,7 +2,6 @@ package com.example.marvel.view
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -11,14 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
 import com.example.marvel.adapter.AdapterCreators
-import com.example.marvel.model.creators.Creators
+import com.example.marvel.model.creators.ResultsCreators
 import com.example.marvel.viewmodel.ViewModelMarvel
-import kotlinx.android.synthetic.main.activity_login.*
 
 
 class CreatorsActivity : AppCompatActivity() {
 
-    private var results = mutableSetOf<Creators>()
+    private var results = mutableSetOf<ResultsCreators.Data.Creators>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,21 +31,15 @@ class CreatorsActivity : AppCompatActivity() {
 
         viewModelCreators.getAllCreators()
         viewModelCreators.listCreators.observe(this, androidx.lifecycle.Observer {
-            it?.let {
-                it.forEach { creators ->
-                    if (!creators.thumbnail.path.contains("image_not_available")){
-                        results.add(creators)
-                    }
-                }
-            }
+            it?.let { itChar -> results.addAll(itChar) }
             adapterCreators.notifyDataSetChanged()
         })
-
         viewModelCreators.loading.observe(this, Observer { loading ->
             if (loading) {
                 progressbar.visibility = View.VISIBLE
             } else {
                 progressbar.visibility = View.GONE
+                adapterCreators.notifyDataSetChanged()
             }
         })
     }

@@ -7,8 +7,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.marvel.R;
-import com.example.marvel.model.characters.Characters;
+import com.example.marvel.model.characters.ResultsCharacters;
 import com.squareup.picasso.Picasso;
 
 public class DetailCharacters extends AppCompatActivity {
@@ -32,7 +34,7 @@ public class DetailCharacters extends AppCompatActivity {
         favorite = findViewById(R.id.btn_character);
 
         if(getIntent() != null){
-            Characters characters = getIntent().getExtras().getParcelable("Hero");
+            ResultsCharacters.Data.Characters characters = getIntent().getExtras().getParcelable("Hero");
             if(characters.getDescription().isEmpty()) {
                 descripiton.setText(R.string.descri_off);
             } else {
@@ -41,6 +43,8 @@ public class DetailCharacters extends AppCompatActivity {
             title.setText(characters.getName());
             Picasso.get().load(characters.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageBackground);
             Picasso.get().load(characters.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageCharacter);
+        }else {
+            Toast.makeText(this, R.string.problem_server, Toast.LENGTH_LONG).show();
         }
     }
 }
