@@ -53,7 +53,7 @@ data class ResultsComics(
                 @SerializedName("dates")
             val dates: List<Date> = listOf(),
                 @SerializedName("description")
-            val description: @RawValue Any = Any(),
+            val description: String = "",
                 @SerializedName("diamondCode")
             val diamondCode: String = "",
                 @SerializedName("digitalId")

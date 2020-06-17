@@ -33,10 +33,10 @@ public class DetailComics extends AppCompatActivity {
 
         if(getIntent() != null){
             ResultsComics.Data.Comics comic = getIntent().getExtras().getParcelable("Title");
-            if(comic.getVariantDescription().isEmpty()) {
+            if(comic.getDescription().isEmpty()) {
                 description.setText(R.string.descri_off);
             } else {
-                description.setText(comic.getVariantDescription());
+                description.setText(comic.getDescription());
             }
             title.setText(comic.getTitle());
             Picasso.get().load(comic.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageBackgro);
