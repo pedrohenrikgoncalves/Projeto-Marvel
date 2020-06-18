@@ -31,7 +31,13 @@ class ComicsActivity : AppCompatActivity() {
 
         viewModelComics.getAllComics()
         viewModelComics.listComics.observe(this, androidx.lifecycle.Observer {
-            it?.let { itChar -> results.addAll(itChar) }
+            it?.let {
+                it.forEach { comic ->
+                    if (!comic.thumbnail.path.contains("image_not_available")) {
+                        results.add(comic)
+                    }
+                }
+            }
             adapterComics.notifyDataSetChanged()
         })
         viewModelComics.loading.observe(this, Observer { loading ->

@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import android.content.Intent;
@@ -18,16 +19,22 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.marvel.R;
+import com.example.marvel.viewmodel.ViewModelLogin;
 import com.google.android.material.navigation.NavigationView;
+import com.squareup.picasso.Picasso;
 
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity {
 
     private Button personagens, criadores, eventos, quadrinhos;
     private FragmentManager manager;
     private DrawerLayout drawerLayout;
+    private ViewModelLogin viewModelLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(getColor(R.color.backred));
+
+        viewModelLogin = ViewModelProviders.of(this).get(ViewModelLogin.class);
 
 
         Toolbar toolbar = findViewById(R.id.app_bar);
@@ -64,8 +73,44 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        manager = getSupportFragmentManager();
+        View headerView = navigationView.getHeaderView(0);
+        TextView nav_user = headerView.findViewById(R.id.user_name);
+        TextView nav_email = headerView.findViewById(R.id.user_email);
+        ImageView nav_image = headerView.findViewById(R.id.image_user);
 
+        nav_user.setText(viewModelLogin.getUser().getDisplayName());
+        nav_email.setText(viewModelLogin.getUser().getEmail());
+        Picasso.get().load(viewModelLogin.getUser().getPhotoUrl()).into(nav_image);
+
+        manager = getSupportFragmentManager();
+        viewModelLogin.getExitresponse().observe(this, aBoolean -> {
+            if (aBoolean) {
+                onBackPressed();
+            } else {
+                Toast.makeText(this, "Erro ao sair", Toast.LENGTH_SHORT).show();
+            }
+        });
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+              @Override
+              public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                  int id = item.getItemId();
+
+                  if (id == R.id.nav_perfil) {
+                      startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                  }
+                  if (id == R.id.nav_sobre) {
+                      startActivity(new Intent(getApplicationContext(), AboutActivity.class));
+                  }
+                if (id == R.id.nav_favoritos) {
+                startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
+                } else if (id == R.id.btn_sair) {
+                      viewModelLogin.logOff();
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+              }
+        });
         quadrinhos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,20 +136,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         eventos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 Intent intent = new Intent(getApplicationContext(), EventsActivity.class);
-                 startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), EventsActivity.class);
+                startActivity(intent);
             }
         });
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.nav_favoritos) {
-            startActivity(new Intent(this, CharactersActivity.class));
-        }
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
     }
 }

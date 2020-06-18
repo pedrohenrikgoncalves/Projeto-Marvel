@@ -33,5 +33,6 @@
     <string name="confirmpassword">Confirm Password</string>
     <string name="problem_server">Problem with server</string>
     <string name="failed">Failed to connect</string>
+    <string name="change_image">Change image</string>
 
 </resources>

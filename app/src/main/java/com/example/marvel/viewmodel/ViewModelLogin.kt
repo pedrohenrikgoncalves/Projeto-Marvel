@@ -13,6 +13,8 @@ class ViewModelLogin : ViewModel(){
 
     val loginResponse = MutableLiveData<Boolean>()
 
+    val exitresponse = MutableLiveData<Boolean>()
+
     val user get() = auth.currentUser
 
     fun logIn(data: Intent?) = try {
@@ -32,5 +34,13 @@ class ViewModelLogin : ViewModel(){
 
     val onLoginFail = {
         loginResponse.postValue(false)
+    }
+    fun logOff() {
+        if (user != null) {
+            auth.signOut()
+            exitresponse.postValue(true)
+        } else {
+        exitresponse.postValue(false)
+        }
     }
 }
