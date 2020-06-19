@@ -35,5 +35,6 @@
     <string name="failed">Failed to connect</string>
     <string name="change_image">Change image</string>
     <string name="error_exiting">Error exiting</string>
+    <string name="goot">I AM GROOT</string>
 
 </resources>
