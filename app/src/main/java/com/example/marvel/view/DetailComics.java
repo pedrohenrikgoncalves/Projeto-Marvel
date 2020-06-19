@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.example.marvel.R;
 import com.example.marvel.model.comics.ResultsComics;
 import com.squareup.picasso.Picasso;
@@ -23,7 +25,8 @@ public class DetailComics extends AppCompatActivity {
 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(getColor(R.color.topbar));
+        window.setStatusBarColor(getColor(R.color.detailColor));
+        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.detailColor));
 
         imageComics = findViewById(R.id.img_comics);
         imageBackgro = findViewById(R.id. img_comics_two);

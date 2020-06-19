@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -44,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(getColor(R.color.backred));
+        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.backred));
 
         viewModelLogin = ViewModelProviders.of(this).get(ViewModelLogin.class);
 
@@ -87,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
             if (aBoolean) {
                 onBackPressed();
             } else {
-                Toast.makeText(this, "Erro ao sair", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.error_exiting, Toast.LENGTH_SHORT).show();
             }
         });
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

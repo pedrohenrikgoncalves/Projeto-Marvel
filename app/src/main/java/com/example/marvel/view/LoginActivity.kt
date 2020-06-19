@@ -1,12 +1,12 @@
 package com.example.marvel.view
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import com.example.marvel.R
 import com.example.marvel.viewmodel.ViewModelLogin
@@ -36,6 +36,11 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        val window = window
+        window.statusBarColor = getColor(R.color.loginColor)
+        getWindow().navigationBarColor = ContextCompat.getColor(this, R.color.loginColor)
+
         buttonEnviar = findViewById(R.id.enviar)
         senha = findViewById(R.id.password)
         email = findViewById(R.id.email)
