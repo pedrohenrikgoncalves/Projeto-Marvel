@@ -78,7 +78,7 @@
         android:layout_marginEnd="10dp"
         android:background="@color/redcolor"
         android:padding="1dp"
-        android:text="Adicionar os favoritos"
+        android:text="@string/add_favorites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_characters"
         app:layout_constraintTop_toBottomOf="@+id/img_characters_two" />

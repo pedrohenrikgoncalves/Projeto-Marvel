@@ -21,6 +21,7 @@ public class DetailCharacters extends AppCompatActivity {
     private ImageView imageBackground;
     private TextView title, descripiton;
     private Button favorite;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

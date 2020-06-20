@@ -19,7 +19,7 @@ public class DetailCreators extends AppCompatActivity {
 
     private ImageView imageCreators, imageBackground;
     private TextView title, descripiton;
-    private Button favorite;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

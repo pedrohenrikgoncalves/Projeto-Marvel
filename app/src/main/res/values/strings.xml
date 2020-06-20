@@ -19,6 +19,7 @@
     <string name="characters">characters</string>
     <string name="profile">Profile</string>
     <string name="favorites">Favorites</string>
+    <string name="add_favorites">Add to favorites</string>
     <string name="about">About</string>
     <string name="btn_characters">CHARACTERS</string>
     <string name="btn_comics">COMICS</string>

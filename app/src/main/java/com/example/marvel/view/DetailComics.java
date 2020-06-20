@@ -15,9 +15,10 @@ import com.example.marvel.model.comics.ResultsComics;
 import com.squareup.picasso.Picasso;
 
 public class DetailComics extends AppCompatActivity {
+
     private ImageView imageComics, imageBackgro;
     private TextView title, description;
-    private Button favorite;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

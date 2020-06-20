@@ -19,7 +19,6 @@ public class DetailEvents extends AppCompatActivity {
 
     private ImageView imageEvents, imageBackground;
     private TextView title, descripiton;
-    private Button favorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
