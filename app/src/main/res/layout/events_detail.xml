@@ -65,17 +65,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_events" />
 
-    <Button
-        android:id="@+id/btn_events"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:background="@color/colorAccent"
-        android:padding="1dp"
-        android:text="Adicionar os favoritos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/img_events"
-        app:layout_constraintTop_toBottomOf="@+id/img_events_two" />
 </androidx.constraintlayout.widget.ConstraintLayout>

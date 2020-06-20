@@ -35,7 +35,6 @@ public class DetailEvents extends AppCompatActivity {
         imageBackground = findViewById(R.id.img_events_two);
         title = findViewById(R.id.title_events);
         descripiton = findViewById(R.id.description_events);
-        favorite = findViewById(R.id.btn_events);
 
         if (getIntent() != null) {
             ResultsEvents.Data.Events events = getIntent().getExtras().getParcelable("Event");

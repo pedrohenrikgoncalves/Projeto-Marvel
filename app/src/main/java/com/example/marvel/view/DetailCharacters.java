@@ -2,7 +2,6 @@ package com.example.marvel.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -10,14 +9,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.marvel.R;
 import com.example.marvel.model.characters.ResultsCharacters;
 import com.squareup.picasso.Picasso;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class DetailCharacters extends AppCompatActivity {
 
-    private ImageView imageCharacter, imageBackground;
+    private ImageView imageCharacter;
+    private ImageView imageBackground;
     private TextView title, descripiton;
     private Button favorite;
     @Override
@@ -29,6 +30,7 @@ public class DetailCharacters extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(getColor(R.color.detailColor));
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.detailColor));
+
 
         imageCharacter = findViewById(R.id.img_characters);
         imageBackground = findViewById(R.id. img_characters_two);

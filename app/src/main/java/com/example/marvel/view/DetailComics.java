@@ -32,7 +32,6 @@ public class DetailComics extends AppCompatActivity {
         imageBackgro = findViewById(R.id. img_comics_two);
         title = findViewById(R.id.title_comics);
         description = findViewById(R.id.description_comics);
-        favorite = findViewById(R.id.btn_comics);
 
         if(getIntent() != null){
             ResultsComics.Data.Comics comic = getIntent().getExtras().getParcelable("Title");

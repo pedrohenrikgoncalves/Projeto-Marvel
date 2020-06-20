@@ -20,8 +20,6 @@ class AdapterCreators(private val creatorsList: MutableSet<ResultsCreators.Data.
     override fun onBindViewHolder(viewHolderCreators: ViewHolderCreators, position: Int) {
         val creators = creatorsList.elementAt(position)
         viewHolderCreators.creators.text = creators.firstName
-        Picasso.get().load(creators.thumbnail.path + ".jpg").error(R.drawable.logo_aplicativo)
-                .into(viewHolderCreators.imageView)
         viewHolderCreators.cardViewCreators.setOnClickListener { view ->
             val intent = Intent(view.context, DetailCreators::class.java)
             val bundle = Bundle()

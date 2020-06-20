@@ -22,48 +22,4 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonQuadrinhos"
-        android:layout_width="246dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#CF001C"
-        android:text="@string/btn_comics"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPersonagens"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/buttonCriadores"
-        android:layout_width="246dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#CF001C"
-        android:text="@string/btn_creators"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonQuadrinhos"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/buttonEventos"
-        android:layout_width="246dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#CF001C"
-        android:text="@string/btn_events"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCriadores"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

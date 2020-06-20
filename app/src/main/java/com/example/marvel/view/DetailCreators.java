@@ -35,7 +35,6 @@ public class DetailCreators extends AppCompatActivity {
         imageBackground = findViewById(R.id.img_creators_two);
         title = findViewById(R.id.title_creators);
         descripiton = findViewById(R.id.description_creators);
-        favorite = findViewById(R.id.btn_creators);
 
         if (getIntent() != null) {
             ResultsCreators.Data.Creators creators = getIntent().getExtras().getParcelable("Creator");
