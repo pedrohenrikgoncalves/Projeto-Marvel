@@ -2,19 +2,12 @@ package com.example.marvel.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.marvel.R;
 import com.example.marvel.model.creators.ResultsCreators;
-import com.squareup.picasso.Picasso;
 
 public class DetailCreators extends AppCompatActivity {
 

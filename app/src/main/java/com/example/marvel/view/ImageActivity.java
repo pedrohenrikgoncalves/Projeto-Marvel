@@ -2,23 +2,15 @@ package com.example.marvel.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.marvel.R;
 import com.example.marvel.model.comics.ResultsComics;
 import com.squareup.picasso.Picasso;
 
-import java.util.Objects;
-
 public class ImageActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
