@@ -2,20 +2,16 @@ package com.example.marvel.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import com.example.marvel.R;
 import com.example.marvel.model.comics.ResultsComics;
-import com.example.marvel.util.PanelKt;
 import com.squareup.picasso.Picasso;
 
 public class DetailComics extends AppCompatActivity {

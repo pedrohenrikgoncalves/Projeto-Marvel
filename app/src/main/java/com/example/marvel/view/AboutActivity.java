@@ -2,16 +2,13 @@ package com.example.marvel.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.example.marvel.R;
-
 import static android.widget.Toast.makeText;
 
 public class AboutActivity extends AppCompatActivity {

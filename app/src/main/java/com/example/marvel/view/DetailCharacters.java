@@ -13,8 +13,6 @@ import com.example.marvel.R;
 import com.example.marvel.model.characters.ResultsCharacters;
 import com.squareup.picasso.Picasso;
 
-import uk.co.senab.photoview.PhotoViewAttacher;
-
 public class DetailCharacters extends AppCompatActivity {
 
     private ImageView imageCharacter;

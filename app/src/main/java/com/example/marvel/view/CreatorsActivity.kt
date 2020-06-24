@@ -13,7 +13,6 @@ import com.example.marvel.adapter.AdapterCreators
 import com.example.marvel.model.creators.ResultsCreators
 import com.example.marvel.viewmodel.ViewModelMarvel
 
-
 class CreatorsActivity : AppCompatActivity() {
 
     private var results = mutableSetOf<ResultsCreators.Data.Creators>()
