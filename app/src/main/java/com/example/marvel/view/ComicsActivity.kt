@@ -38,7 +38,6 @@ class ComicsActivity : AppCompatActivity() {
                     }
                 }
             }
-            adapterComics.notifyDataSetChanged()
         })
         viewModelComics.loading.observe(this, Observer { loading ->
             if (loading) {

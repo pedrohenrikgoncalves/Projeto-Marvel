@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import com.example.marvel.R;
 import com.example.marvel.model.creators.ResultsCreators;
