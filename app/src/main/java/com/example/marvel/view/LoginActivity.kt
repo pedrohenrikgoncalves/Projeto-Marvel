@@ -24,13 +24,13 @@ class LoginActivity : AppCompatActivity() {
     private val loginCode = 300
     private val viewModel: ViewModelLogin by viewModels()
 
-    private val loginIntent by lazy {
+    private val signInClient by lazy {
         GoogleSignIn.getClient(
                 this@LoginActivity, GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build()
-        ).signInIntent
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,7 +70,9 @@ class LoginActivity : AppCompatActivity() {
             }
         })
         google.setOnClickListener(View.OnClickListener {
-            startActivityForResult(loginIntent, loginCode)
+            startActivityForResult(signInClient.signInIntent, loginCode)
+            viewModel.logOff()
+            signInClient.revokeAccess()
         })
     }
 
