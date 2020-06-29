@@ -33,7 +33,8 @@ class CharactersActivity : AppCompatActivity() {
         viewModelCharacter.listCharacter.observe(this, androidx.lifecycle.Observer {
             it?.let {
                 it.forEach { character ->
-                    if (!character.thumbnail.path.contains("image_not_available")) {
+                    if (!character.thumbnail.path.contains("image_not_available")
+                            || !character.description.contains(" ")) {
                         results.add(character)
                     }
                 }
