@@ -37,8 +37,8 @@ public class DetailComics extends AppCompatActivity {
         description = findViewById(R.id.description_comics);
 
         if(getIntent() != null){
-            comic = getIntent().getExtras().getParcelable("Title");
-            if(comic.getDescription().isEmpty()) {
+            comic = getIntent().getParcelableExtra("Title");
+            if(comic.getDescription() == null || comic.getDescription().isEmpty()) {
                 description.setText(R.string.descri_off);
             } else {
                 description.setText(comic.getDescription());
