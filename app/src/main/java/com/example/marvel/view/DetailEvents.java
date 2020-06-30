@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,11 +54,10 @@ public class DetailEvents extends AppCompatActivity {
         imageEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ImageActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ImageEventsActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("event", event);
                 startActivity(intent.putExtras(bundle));
-
             }
         });
     }

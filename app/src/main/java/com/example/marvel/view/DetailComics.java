@@ -52,11 +52,10 @@ public class DetailComics extends AppCompatActivity {
         imageComics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ImageActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ImageComicsActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putParcelable("comic", comic);
                 startActivity(intent.putExtras(bundle));
-
             }
         });
     }

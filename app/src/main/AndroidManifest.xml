@@ -14,32 +14,47 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".view.ImageActivity"></activity>
-        <activity android:name=".view.ProfileActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".view.FavoritesActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".view.AboutActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".view.DetailEvents"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".view.EventsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".view.DetailCreators"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".view.CreatorsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".view.ComicsActivity"
+        <activity android:name=".view.ImageCharactersActivity"></activity>
+        <activity android:name=".view.ImageEventsActivity"></activity>
+        <activity android:name=".view.ImageComicsActivity" />
+        <activity
+            android:name=".view.ProfileActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".view.DetailCharacters"
+        <activity
+            android:name=".view.FavoritesActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".view.DetailComics"
+        <activity
+            android:name=".view.AboutActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".view.CharactersActivity"
+        <activity
+            android:name=".view.DetailEvents"
             android:screenOrientation="portrait" />
-        <activity android:name=".view.RegisterActivity"
+        <activity
+            android:name=".view.EventsActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".view.SplashActivity"
+        <activity
+            android:name=".view.DetailCreators"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.CreatorsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.ComicsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.DetailCharacters"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.DetailComics"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.CharactersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

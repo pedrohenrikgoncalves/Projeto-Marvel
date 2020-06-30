@@ -10,12 +10,12 @@ import com.example.marvel.R;
 import com.example.marvel.model.comics.ResultsComics;
 import com.squareup.picasso.Picasso;
 
-public class ImageActivity extends AppCompatActivity {
+public class ImageComicsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.popup_image);
+        setContentView(R.layout.popup_image_comics);
         ImageView imageView = findViewById(R.id.image_at_expansion);
         ImageView imageExit = findViewById(R.id.imageExit);
 

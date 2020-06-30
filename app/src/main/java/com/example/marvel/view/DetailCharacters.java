@@ -2,7 +2,10 @@ package com.example.marvel.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.marvel.R;
 import com.example.marvel.model.characters.ResultsCharacters;
+import com.example.marvel.model.comics.ResultsComics;
 import com.squareup.picasso.Picasso;
 
 public class DetailCharacters extends AppCompatActivity {
@@ -19,6 +23,7 @@ public class DetailCharacters extends AppCompatActivity {
     private ImageView imageBackground;
     private TextView title, descripiton;
     private Button favorite;
+    ResultsCharacters.Data.Characters character;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +55,14 @@ public class DetailCharacters extends AppCompatActivity {
         }else {
             Toast.makeText(this, R.string.problem_server, Toast.LENGTH_LONG).show();
         }
+        imageCharacter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ImageCharactersActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("character", character);
+                startActivity(intent.putExtras(bundle));
+            }
+        });
     }
 }
