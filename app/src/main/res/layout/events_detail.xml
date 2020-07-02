@@ -29,7 +29,7 @@
         android:layout_height="200dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="80dp"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         android:src="@drawable/marvel4k"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/img_events_two" />

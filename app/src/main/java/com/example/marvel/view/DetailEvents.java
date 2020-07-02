@@ -21,7 +21,8 @@ public class DetailEvents extends AppCompatActivity {
 
     private ImageView imageEvents, imageBackground;
     private TextView title, descripiton;
-    ResultsComics.Data.Comics event;
+    private Bundle bundle;
+    ResultsEvents.Data.Events event;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +40,15 @@ public class DetailEvents extends AppCompatActivity {
         descripiton = findViewById(R.id.description_events);
 
         if (getIntent() != null) {
-            ResultsEvents.Data.Events events = getIntent().getExtras().getParcelable("Event");
-            if (events.getDescription().isEmpty()) {
+            ResultsEvents.Data.Events event = getIntent().getExtras().getParcelable("Event");
+            if (event.getDescription().isEmpty()) {
                 descripiton.setText(R.string.descri_off);
             } else {
-                descripiton.setText(events.getDescription());
+                descripiton.setText(event.getDescription());
             }
-            title.setText(events.getTitle());
-            Picasso.get().load(events.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageBackground);
-            Picasso.get().load(events.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageEvents);
+            title.setText(event.getTitle());
+            Picasso.get().load(event.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageBackground);
+            Picasso.get().load(event.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageEvents);
         }else {
             Toast.makeText(this, R.string.problem_server, Toast.LENGTH_LONG).show();
         }
@@ -56,7 +57,7 @@ public class DetailEvents extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ImageEventsActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("event", event);
+                bundle.putParcelable("Event", event);
                 startActivity(intent.putExtras(bundle));
             }
         });

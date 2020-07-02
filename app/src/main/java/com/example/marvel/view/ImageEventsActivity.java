@@ -24,7 +24,7 @@ public class ImageEventsActivity extends AppCompatActivity {
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.detailColor));
 
         if (getIntent().getExtras() != null) {
-            ResultsEvents.Data.Events event = getIntent().getExtras().getParcelable("event");
+            ResultsEvents.Data.Events event = getIntent().getExtras().getParcelable("Event");
             Picasso.get().load(event.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageView);
         }
         imageExit.setOnClickListener(new View.OnClickListener() {

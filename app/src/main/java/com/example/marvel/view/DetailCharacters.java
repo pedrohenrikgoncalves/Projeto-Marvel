@@ -23,6 +23,7 @@ public class DetailCharacters extends AppCompatActivity {
     private ImageView imageBackground;
     private TextView title, descripiton;
     private Button favorite;
+    private Bundle bundle;
     ResultsCharacters.Data.Characters character;
 
     @Override
@@ -60,7 +61,7 @@ public class DetailCharacters extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ImageCharactersActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("character", character);
+                bundle.putParcelable("Hero", character);
                 startActivity(intent.putExtras(bundle));
             }
         });

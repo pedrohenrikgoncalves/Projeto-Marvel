@@ -24,8 +24,8 @@ public class DetailCreators extends AppCompatActivity {
 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(getColor(R.color.detailColor));
-        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.detailColor));
+        window.setStatusBarColor(getColor(R.color.colorSplash));
+        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.colorSplash));
 
         if (getIntent() != null) {
             ResultsCreators.Data.Creators creators = getIntent().getExtras().getParcelable("Creator");

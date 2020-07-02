@@ -24,7 +24,7 @@ public class ImageCharactersActivity extends AppCompatActivity {
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.detailColor));
 
         if (getIntent().getExtras() != null) {
-            ResultsCharacters.Data.Characters character = getIntent().getExtras().getParcelable("character");
+            ResultsCharacters.Data.Characters character = getIntent().getExtras().getParcelable("Hero");
             Picasso.get().load(character.getThumbnail().getPath() + ".jpg").error(R.drawable.logo_aplicativo).into(imageView);
         }
         imageExit.setOnClickListener(new View.OnClickListener() {
