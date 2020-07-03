@@ -1,9 +1,9 @@
 package com.example.marvel.network
 
-import com.example.marvel.model.creators.ResultsCreators
-import com.example.marvel.model.events.ResultsEvents
 import com.example.marvel.model.characters.ResultsCharacters
 import com.example.marvel.model.comics.ResultsComics
+import com.example.marvel.model.creators.ResultsCreators
+import com.example.marvel.model.events.ResultsEvents
 import retrofit2.http.GET
 import retrofit2.http.Query
 

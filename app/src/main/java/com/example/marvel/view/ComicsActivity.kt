@@ -33,7 +33,7 @@ class ComicsActivity : AppCompatActivity() {
         viewModelComics.listComics.observe(this, androidx.lifecycle.Observer {
             it?.let {
                 it.forEach { comic ->
-                    if (!comic.thumbnail.path.contains("image_not_available")) {
+                    if (!comic.thumbnail?.path?.contains("image_not_available")!!) {
                         results.add(comic)
                     }
                 }

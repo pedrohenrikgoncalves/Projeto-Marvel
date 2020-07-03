@@ -37,17 +37,17 @@ class RegisterActivity : AppCompatActivity() {
         confirmPassword = findViewById(R.id.confirm_password)
         email = findViewById(R.id.email)
 
-        firebaseAuth = FirebaseAuth.getInstance()
-        buttonSave.setOnClickListener(View.OnClickListener {
-            viewModel.validarCampo(username.text.toString(),email.text.toString(),password.text.toString())
-        })
-
         viewModel.validao.observe(this, Observer {
             if(it){
                 startActivity(Intent(this, HomeActivity::class.java))
             } else{
                 Toast.makeText(this, "Oh, Shit", Toast.LENGTH_LONG).show()
             }
+        })
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        buttonSave.setOnClickListener(View.OnClickListener {
+            viewModel.validarCampo(username.text.toString(),email.text.toString(),password.text.toString(),confirmPassword.text.toString())
         })
     }
 }

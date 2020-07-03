@@ -22,7 +22,7 @@ class AdapterComics(private val comicsList: MutableSet<ResultsComics.Data.Comics
         viewHolderComics.titulo.text = comic.title
         viewHolderComics.edicao.text = comic.issueNumber.toString()
         viewHolderComics.ano.text = comic.pageCount.toString()
-        Picasso.get().load(comic.thumbnail.path + ".jpg").error(R.drawable.logo_aplicativo)
+        Picasso.get().load(comic.thumbnail?.path + ".jpg").error(R.drawable.logo_aplicativo)
                 .into(viewHolderComics.imageView)
         viewHolderComics.cardViewComics.setOnClickListener { v ->
             val intent = Intent(v.context, DetailComics::class.java)

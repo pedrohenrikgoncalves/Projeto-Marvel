@@ -21,7 +21,7 @@ class ViewModelMarvel : ViewModel() {
 
     fun getAllCharacters() = CoroutineScope(IO).launch {
         repositoryMarvel.getCharacters().let {
-            listCharacter.postValue(it.data.results)
+            listCharacter.postValue(it.data?.results)
             loading.postValue(true)
         }
         loading.postValue(false)
@@ -33,7 +33,7 @@ class ViewModelMarvel : ViewModel() {
     fun getAllComics() = CoroutineScope(IO).launch {
         loading.postValue(true)
         repositorMarvel.getComics().let {
-            listComics.postValue(it.data.results)
+            listComics.postValue(it.data?.results)
         }
         loading.postValue(false)
     }
@@ -44,7 +44,7 @@ class ViewModelMarvel : ViewModel() {
     fun getAllCreators() = CoroutineScope(IO).launch {
         loading.postValue(true)
         repositoMarvel.getCreators().let {
-            listCreators.postValue(it.data.results)
+            listCreators.postValue(it.data?.results)
         }
         loading.postValue(false)
     }
@@ -55,7 +55,7 @@ class ViewModelMarvel : ViewModel() {
     fun getAllEvents() = CoroutineScope(IO).launch {
         loading.postValue(true)
         repositMarvel.getEvents().let {
-            listEvents.postValue(it.data.results)
+            listEvents.postValue(it.data?.results)
         }
         loading.postValue(false)
     }

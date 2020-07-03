@@ -20,7 +20,7 @@ class AdapterEvents(private val eventsList: MutableSet<ResultsEvents.Data.Events
     override fun onBindViewHolder(viewHolderEvents: ViewHolderEvents, position: Int) {
         val eventos = eventsList.elementAt(position)
         viewHolderEvents.events.text = eventos.title
-        Picasso.get().load(eventos.thumbnail.path + ".jpg").error(R.drawable.logo_aplicativo)
+        Picasso.get().load(eventos.thumbnail?.path + ".jpg").error(R.drawable.logo_aplicativo)
                 .into(viewHolderEvents.imageView)
         viewHolderEvents.cardViewEvents.setOnClickListener { view ->
             val intent = Intent(view.context, DetailEvents::class.java)

@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.R
 import com.example.marvel.model.creators.ResultsCreators
 import com.example.marvel.view.DetailCreators
-import com.squareup.picasso.Picasso
 
 class AdapterCreators(private val creatorsList: MutableSet<ResultsCreators.Data.Creators>) : RecyclerView.Adapter<ViewHolderCreators>() {
 

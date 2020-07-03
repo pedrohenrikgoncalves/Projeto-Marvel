@@ -40,7 +40,7 @@ public class DetailEvents extends AppCompatActivity {
         descripiton = findViewById(R.id.description_events);
 
         if (getIntent() != null) {
-            ResultsEvents.Data.Events event = getIntent().getExtras().getParcelable("Event");
+            event = getIntent().getExtras().getParcelable("Event");
             if (event.getDescription().isEmpty()) {
                 descripiton.setText(R.string.descri_off);
             } else {

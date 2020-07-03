@@ -1,9 +1,9 @@
 package com.example.marvel.repository
 
-import com.example.marvel.model.creators.ResultsCreators
-import com.example.marvel.model.events.ResultsEvents
 import com.example.marvel.model.characters.ResultsCharacters
 import com.example.marvel.model.comics.ResultsComics
+import com.example.marvel.model.creators.ResultsCreators
+import com.example.marvel.model.events.ResultsEvents
 import com.example.marvel.network.RetroInit
 import com.example.marvel.network.ServiceMarvel
 import com.example.marvel.util.AppUse.md5

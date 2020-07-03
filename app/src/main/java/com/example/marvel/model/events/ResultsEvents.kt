@@ -10,89 +10,89 @@ import android.os.Parcelable
 @Parcelize
 data class ResultsEvents(
     @SerializedName("attributionHTML")
-    val attributionHTML: String = "",
+    var attributionHTML: String? = "",
     @SerializedName("attributionText")
-    val attributionText: String = "",
+    var attributionText: String? = "",
     @SerializedName("code")
-    val code: Int = 0,
+    var code: Int? = 0,
     @SerializedName("copyright")
-    val copyright: String = "",
+    var copyright: String? = "",
     @SerializedName("data")
-    val `data`: Data = Data(),
+    var `data`: Data? = Data(),
     @SerializedName("etag")
-    val etag: String = "",
+    var etag: String? = "",
     @SerializedName("status")
-    val status: String = ""
+    var status: String? = ""
 ) : Parcelable {
     @SuppressLint("ParcelCreator")
     @Parcelize
     data class Data(
-        @SerializedName("count")
-        val count: Int = 0,
-        @SerializedName("limit")
-        val limit: Int = 0,
-        @SerializedName("offset")
-        val offset: Int = 0,
-        @SerializedName("results")
-        val results: MutableSet<Events> = mutableSetOf(),
-        @SerializedName("total")
-        val total: Int = 0
+            @SerializedName("count")
+        var count: Int? = 0,
+            @SerializedName("limit")
+        var limit: Int? = 0,
+            @SerializedName("offset")
+        var offset: Int? = 0,
+            @SerializedName("results")
+        var results: MutableSet<Events>? = mutableSetOf(),
+            @SerializedName("total")
+        var total: Int? = 0
     ) : Parcelable {
-        @SuppressLint("ParcelCreator")
+        @SuppressLint("ParcelEvents")
         @Parcelize
         data class Events(
             @SerializedName("characters")
-            val characters: Characters = Characters(),
+            var characters: Characters? = Characters(),
             @SerializedName("comics")
-            val comics: Comics = Comics(),
+            var comics: Comics? = Comics(),
             @SerializedName("creators")
-            val creators: Creators = Creators(),
+            var events: Events? = Events(),
             @SerializedName("description")
-            val description: String = "",
+            var description: String? = "",
             @SerializedName("end")
-            val end: String = "",
+            var end: String? = "",
             @SerializedName("id")
-            val id: Int = 0,
+            var id: Int? = 0,
             @SerializedName("modified")
-            val modified: String = "",
+            var modified: String? = "",
             @SerializedName("next")
-            val next: Next = Next(),
+            var next: Next? = Next(),
             @SerializedName("previous")
-            val previous: Previous = Previous(),
+            var previous: Previous? = Previous(),
             @SerializedName("resourceURI")
-            val resourceURI: String = "",
+            var resourceURI: String? = "",
             @SerializedName("series")
-            val series: Series = Series(),
+            var series: Series? = Series(),
             @SerializedName("start")
-            val start: String = "",
+            var start: String? = "",
             @SerializedName("stories")
-            val stories: Stories = Stories(),
+            var stories: Stories? = Stories(),
             @SerializedName("thumbnail")
-            val thumbnail: Thumbnail = Thumbnail(),
+            var thumbnail: Thumbnail? = Thumbnail(),
             @SerializedName("title")
-            val title: String = "",
+            var title: String? = "",
             @SerializedName("urls")
-            val urls: List<Url> = listOf()
+            var urls: List<Url?>? = listOf()
         ) : Parcelable {
             @SuppressLint("ParcelCreator")
             @Parcelize
             data class Characters(
                 @SerializedName("available")
-                val available: Int = 0,
+                var available: Int? = 0,
                 @SerializedName("collectionURI")
-                val collectionURI: String = "",
+                var collectionURI: String? = "",
                 @SerializedName("items")
-                val items: List<Item> = listOf(),
+                var items: List<Item?>? = listOf(),
                 @SerializedName("returned")
-                val returned: Int = 0
+                var returned: Int? = 0
             ) : Parcelable {
                 @SuppressLint("ParcelCreator")
                 @Parcelize
                 data class Item(
                     @SerializedName("name")
-                    val name: String = "",
+                    var name: String? = "",
                     @SerializedName("resourceURI")
-                    val resourceURI: String = ""
+                    var resourceURI: String? = ""
                 ) : Parcelable
             }
 
@@ -100,45 +100,45 @@ data class ResultsEvents(
             @Parcelize
             data class Comics(
                 @SerializedName("available")
-                val available: Int = 0,
+                var available: Int? = 0,
                 @SerializedName("collectionURI")
-                val collectionURI: String = "",
+                var collectionURI: String? = "",
                 @SerializedName("items")
-                val items: List<Item> = listOf(),
+                var items: List<Item?>? = listOf(),
                 @SerializedName("returned")
-                val returned: Int = 0
+                var returned: Int? = 0
             ) : Parcelable {
                 @SuppressLint("ParcelCreator")
                 @Parcelize
                 data class Item(
                     @SerializedName("name")
-                    val name: String = "",
+                    var name: String? = "",
                     @SerializedName("resourceURI")
-                    val resourceURI: String = ""
+                    var resourceURI: String? = ""
                 ) : Parcelable
             }
 
             @SuppressLint("ParcelCreator")
             @Parcelize
-            data class Creators(
+            data class Events(
                 @SerializedName("available")
-                val available: Int = 0,
+                var available: Int? = 0,
                 @SerializedName("collectionURI")
-                val collectionURI: String = "",
+                var collectionURI: String? = "",
                 @SerializedName("items")
-                val items: List<Item> = listOf(),
+                var items: List<Item?>? = listOf(),
                 @SerializedName("returned")
-                val returned: Int = 0
+                var returned: Int? = 0
             ) : Parcelable {
                 @SuppressLint("ParcelCreator")
                 @Parcelize
                 data class Item(
                     @SerializedName("name")
-                    val name: String = "",
+                    var name: String? = "",
                     @SerializedName("resourceURI")
-                    val resourceURI: String = "",
+                    var resourceURI: String? = "",
                     @SerializedName("role")
-                    val role: String = ""
+                    var role: String? = ""
                 ) : Parcelable
             }
 
@@ -146,39 +146,39 @@ data class ResultsEvents(
             @Parcelize
             data class Next(
                 @SerializedName("name")
-                val name: String = "",
+                var name: String? = "",
                 @SerializedName("resourceURI")
-                val resourceURI: String = ""
+                var resourceURI: String? = ""
             ) : Parcelable
 
             @SuppressLint("ParcelCreator")
             @Parcelize
             data class Previous(
                 @SerializedName("name")
-                val name: String = "",
+                var name: String? = "",
                 @SerializedName("resourceURI")
-                val resourceURI: String = ""
+                var resourceURI: String? = ""
             ) : Parcelable
 
             @SuppressLint("ParcelCreator")
             @Parcelize
             data class Series(
                 @SerializedName("available")
-                val available: Int = 0,
+                var available: Int? = 0,
                 @SerializedName("collectionURI")
-                val collectionURI: String = "",
+                var collectionURI: String? = "",
                 @SerializedName("items")
-                val items: List<Item> = listOf(),
+                var items: List<Item?>? = listOf(),
                 @SerializedName("returned")
-                val returned: Int = 0
+                var returned: Int? = 0
             ) : Parcelable {
                 @SuppressLint("ParcelCreator")
                 @Parcelize
                 data class Item(
                     @SerializedName("name")
-                    val name: String = "",
+                    var name: String? = "",
                     @SerializedName("resourceURI")
-                    val resourceURI: String = ""
+                    var resourceURI: String? = ""
                 ) : Parcelable
             }
 
@@ -186,23 +186,23 @@ data class ResultsEvents(
             @Parcelize
             data class Stories(
                 @SerializedName("available")
-                val available: Int = 0,
+                var available: Int? = 0,
                 @SerializedName("collectionURI")
-                val collectionURI: String = "",
+                var collectionURI: String? = "",
                 @SerializedName("items")
-                val items: List<Item> = listOf(),
+                var items: List<Item?>? = listOf(),
                 @SerializedName("returned")
-                val returned: Int = 0
+                var returned: Int? = 0
             ) : Parcelable {
                 @SuppressLint("ParcelCreator")
                 @Parcelize
                 data class Item(
                     @SerializedName("name")
-                    val name: String = "",
+                    var name: String? = "",
                     @SerializedName("resourceURI")
-                    val resourceURI: String = "",
+                    var resourceURI: String? = "",
                     @SerializedName("type")
-                    val type: String = ""
+                    var type: String? = ""
                 ) : Parcelable
             }
 
@@ -210,18 +210,18 @@ data class ResultsEvents(
             @Parcelize
             data class Thumbnail(
                 @SerializedName("extension")
-                val extension: String = "",
+                var extension: String? = "",
                 @SerializedName("path")
-                val path: String = ""
+                var path: String? = ""
             ) : Parcelable
 
             @SuppressLint("ParcelCreator")
             @Parcelize
             data class Url(
                 @SerializedName("type")
-                val type: String = "",
+                var type: String? = "",
                 @SerializedName("url")
-                val url: String = ""
+                var url: String? = ""
             ) : Parcelable
         }
     }
