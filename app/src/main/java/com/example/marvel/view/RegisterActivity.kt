@@ -42,7 +42,7 @@ class RegisterActivity : AppCompatActivity() {
         viewModelRegister.validao.observe(this, Observer {
             if(it){
                 startActivity(Intent(this, HomeActivity::class.java))
-                Toast.makeText(this, R.string.welcome, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Welcome! "+ username.text.toString(), Toast.LENGTH_SHORT).show()
             } else{
                 Toast.makeText(this, R.string.fill_in_correctly, Toast.LENGTH_LONG).show()
             }
