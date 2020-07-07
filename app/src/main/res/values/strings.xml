@@ -15,12 +15,14 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="exit">Exit</string>
+    <string name="exit">Logout</string>
+    <string name="nav_exit_text">Access another account</string>
     <string name="characters">characters</string>
-    <string name="profile">Profile</string>
     <string name="favorites">Favorites</string>
+    <string name="nav_favorites_text">My favorite characters</string>
     <string name="add_favorites">Add to favorites</string>
     <string name="about">About</string>
+    <string name="nav_about_text">Know a little about Marvel</string>
     <string name="btn_characters">CHARACTERS</string>
     <string name="btn_comics">COMICS</string>
     <string name="btn_events">EVENTS</string>
@@ -39,6 +41,7 @@
     <string name="goot">I AM GROOT</string>
     <string name="update">Update</string>
     <string name="panel">Panel</string>
+    <string name="fill_in_correctly">Please fill in the fields correctly</string>
     <string name="about_marvel">Marvel was started in 1939 by Martin Goodman under a number of corporations and imprints but now known as Timely Comics, and by 1951 had generally become known as Atlas Comics. The Marvel era began in 1961, the year that the company launched The Fantastic Four and other superhero titles created by Stan Lee, Jack Kirby, Steve Ditko and many others. The Marvel brand, which had been used over the years, was solidified as the company\'s primary brand.</string>
 
 </resources>

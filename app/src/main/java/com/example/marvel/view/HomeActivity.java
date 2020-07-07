@@ -96,9 +96,6 @@ public class HomeActivity extends AppCompatActivity {
 
                   int id = item.getItemId();
 
-                  if (id == R.id.nav_perfil) {
-                      startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                  }
                   if (id == R.id.nav_sobre) {
                       startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                   }
