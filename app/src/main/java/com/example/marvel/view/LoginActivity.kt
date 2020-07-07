@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.marvel.R
 import com.example.marvel.viewmodel.ViewModelLogin
 import com.example.marvel.viewmodel.ViewModelLoginFire
+import com.facebook.login.LoginManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
@@ -23,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var textView: TextView
     lateinit var cadastro: TextView
     lateinit var google: ImageView
+    lateinit var facebook: ImageView
     lateinit var loginFirebaseAuth: FirebaseAuth
     lateinit var authStateListener: AuthStateListener
     var activity = this
@@ -58,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
         email = findViewById(R.id.email)
         cadastro = findViewById(R.id.register)
         google = findViewById(R.id.imageViewGoogle)
+        facebook = findViewById(R.id.imageViewFacebook)
 
         cadastro.setOnClickListener(View.OnClickListener {
             val intent = Intent(applicationContext, RegisterActivity::class.java)
@@ -91,10 +96,15 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(activity, R.string.failed, Toast.LENGTH_LONG).show()
             }
         })
+
         google.setOnClickListener(View.OnClickListener {
             startActivityForResult(signInClient.signInIntent, loginCode)
             viewModelLogin.logOff()
             signInClient.revokeAccess()
+        })
+        facebook.setOnClickListener ( View.OnClickListener {
+            LoginManager.getInstance().logInWithReadPermissions(this, listOf("email", "public_profile"))
+            viewModelLogin.loginWithFacebookCall()
         })
     }
 
