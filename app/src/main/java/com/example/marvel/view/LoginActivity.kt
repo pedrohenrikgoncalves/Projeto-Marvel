@@ -4,14 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.marvel.R
 import com.example.marvel.viewmodel.ViewModelLogin
+import com.example.marvel.viewmodel.ViewModelLoginFire
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 
 class LoginActivity : AppCompatActivity() {
     lateinit var buttonEnviar: Button
@@ -20,9 +23,18 @@ class LoginActivity : AppCompatActivity() {
     lateinit var textView: TextView
     lateinit var cadastro: TextView
     lateinit var google: ImageView
+    lateinit var loginFirebaseAuth: FirebaseAuth
+    lateinit var authStateListener: AuthStateListener
     var activity = this
     private val loginCode = 300
-    private val viewModel: ViewModelLogin by viewModels()
+
+    private val viewModelLogin by lazy {
+        ViewModelProviders.of(this).get(ViewModelLogin::class.java)
+    }
+
+    private val viewModelLoginFire by lazy {
+        ViewModelProviders.of(this).get(ViewModelLoginFire::class.java)
+    }
 
     private val signInClient by lazy {
         GoogleSignIn.getClient(
@@ -41,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
         window.statusBarColor = getColor(R.color.loginColor)
         getWindow().navigationBarColor = ContextCompat.getColor(this, R.color.loginColor)
 
-        buttonEnviar = findViewById(R.id.enviar)
+        buttonEnviar = findViewById(R.id.login)
         senha = findViewById(R.id.password)
         email = findViewById(R.id.email)
         cadastro = findViewById(R.id.register)
@@ -51,17 +63,27 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, RegisterActivity::class.java)
             startActivity(intent)
         })
-        buttonEnviar.setOnClickListener(View.OnClickListener {
-            val textoNome = senha.getText().toString()
-            val textoEmail = email.getText().toString()
-            if (textoNome.isEmpty() || textoEmail.isEmpty()) {
-                Toast.makeText(activity, "Please! Fill in all the fields.", Toast.LENGTH_LONG).show()
+        viewModelLoginFire.validinho.observe(this, Observer {
+            if (it) {
+                startActivity(Intent(this, HomeActivity::class.java))
             } else {
-                val intent = Intent(applicationContext, HomeActivity::class.java)
-                startActivity(intent)
+                Toast.makeText(this, R.string.username_or_password, Toast.LENGTH_LONG).show()
             }
         })
-        viewModel.loginResponse.observe(this, Observer {
+        loginFirebaseAuth = FirebaseAuth.getInstance()
+        buttonEnviar = findViewById(R.id.login)
+        buttonEnviar.setOnClickListener(View.OnClickListener {
+            viewModelLoginFire.validaLogin(email.text.toString(), senha.text.toString())
+        })
+        authStateListener = AuthStateListener {
+            val firebaseUser = viewModelLoginFire.user
+            if (firebaseUser != null) {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                Toast.makeText(this, R.string.welcome, Toast.LENGTH_SHORT).show()
+            }
+        }
+        viewModelLogin.loginResponse.observe(this, Observer {
             if (it){
                 val intent = Intent(applicationContext, HomeActivity::class.java)
                 startActivity(intent)
@@ -71,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
         })
         google.setOnClickListener(View.OnClickListener {
             startActivityForResult(signInClient.signInIntent, loginCode)
-            viewModel.logOff()
+            viewModelLogin.logOff()
             signInClient.revokeAccess()
         })
     }
@@ -79,7 +101,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
-            loginCode -> viewModel.logIn(data)
+            loginCode -> viewModelLogin.logIn(data)
         }
     }
 }

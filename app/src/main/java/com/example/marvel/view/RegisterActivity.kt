@@ -4,12 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.marvel.R
-import com.example.marvel.viewmodel.ViewModelLogin
 import com.example.marvel.viewmodel.ViewModelRegister
 import com.google.firebase.auth.FirebaseAuth
 
@@ -21,7 +20,10 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var password: EditText
     lateinit var confirmPassword: EditText
     lateinit var email: EditText
-    private val viewModel: ViewModelRegister by viewModels()
+
+    private val viewModelRegister by lazy {
+        ViewModelProviders.of(this).get(ViewModelRegister::class.java)
+    }
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,17 +39,18 @@ class RegisterActivity : AppCompatActivity() {
         confirmPassword = findViewById(R.id.confirm_password)
         email = findViewById(R.id.email)
 
-        viewModel.validao.observe(this, Observer {
+        viewModelRegister.validao.observe(this, Observer {
             if(it){
                 startActivity(Intent(this, HomeActivity::class.java))
+                Toast.makeText(this, R.string.welcome, Toast.LENGTH_SHORT).show()
             } else{
-                Toast.makeText(this, "Oh, Shit", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.fill_in_correctly, Toast.LENGTH_LONG).show()
             }
         })
 
         firebaseAuth = FirebaseAuth.getInstance()
         buttonSave.setOnClickListener(View.OnClickListener {
-            viewModel.validarCampo(username.text.toString(),email.text.toString(),password.text.toString(),confirmPassword.text.toString())
+            viewModelRegister.validarCampo(username.text.toString(),email.text.toString(),password.text.toString(),confirmPassword.text.toString())
         })
     }
 }
