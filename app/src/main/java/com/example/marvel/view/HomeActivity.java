@@ -78,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
 
         nav_user.setText(viewModelLogin.getUser().getDisplayName());
         nav_email.setText(viewModelLogin.getUser().getEmail());
-        Picasso.get().load(viewModelLogin.getUser().getPhotoUrl()).into(nav_image);
+        Picasso.get().load(viewModelLogin.getUser().getPhotoUrl()).resize(120, 120).into(nav_image);
 
         manager = getSupportFragmentManager();
         viewModelLogin.getExitresponse().observe(this, aBoolean -> {

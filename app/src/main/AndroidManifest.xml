@@ -14,6 +14,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"
+            />
         <activity android:name=".view.ImageCharactersActivity"></activity>
         <activity android:name=".view.ImageEventsActivity"></activity>
         <activity android:name=".view.ImageComicsActivity" />

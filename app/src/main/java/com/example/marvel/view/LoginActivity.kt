@@ -13,11 +13,13 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.marvel.R
 import com.example.marvel.viewmodel.ViewModelLogin
 import com.example.marvel.viewmodel.ViewModelLoginFire
+import com.facebook.FacebookSdk
 import com.facebook.login.LoginManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
+import kotlinx.coroutines.flow.callbackFlow
 
 class LoginActivity : AppCompatActivity() {
     lateinit var buttonEnviar: Button
@@ -50,7 +52,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(this)
         setContentView(R.layout.activity_login)
 
         val window = window
@@ -90,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
         }
         viewModelLogin.loginResponse.observe(this, Observer {
             if (it){
-                val intent = Intent(applicationContext, HomeActivity::class.java)
+                val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             }else{
                 Toast.makeText(activity, R.string.failed, Toast.LENGTH_LONG).show()
@@ -110,6 +113,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        viewModelLogin.callbackManager.onActivityResult(requestCode,resultCode,data)
         when (requestCode) {
             loginCode -> viewModelLogin.logIn(data)
         }
