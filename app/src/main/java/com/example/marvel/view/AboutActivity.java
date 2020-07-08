@@ -3,6 +3,7 @@ package com.example.marvel.view;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -31,7 +32,23 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 makeText(context, R.string.goot, Toast.LENGTH_LONG).show();
+                playSound();
             }
         });
+        goot.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                playSoundLong();
+                return true;
+            }
+        });
+    }
+    private void playSound() {
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.groot);
+        mediaPlayer.start();
+    }
+    private void playSoundLong() {
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.groooot);
+        mediaPlayer.start();
     }
 }
