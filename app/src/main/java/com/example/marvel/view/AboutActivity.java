@@ -31,7 +31,7 @@ public class AboutActivity extends AppCompatActivity {
         goot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeText(context, R.string.goot, Toast.LENGTH_LONG).show();
+                makeText(context, R.string.goot, Toast.LENGTH_SHORT).show();
                 playSound();
             }
         });
