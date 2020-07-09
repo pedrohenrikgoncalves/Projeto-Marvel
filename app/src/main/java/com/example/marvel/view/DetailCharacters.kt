@@ -67,7 +67,7 @@ class DetailCharacters : AppCompatActivity() {
         favorite.setOnClickListener {
             val characterRoom = CharacterRoom(character.description, character.id, character.name, character.thumbnail?.path + ".jpg")
             viewModelRoom.insertCharacterRoom(activity, characterRoom)
-            Toast.makeText(activity, "Add aos favoritos", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, R.string.successfully_favorites, Toast.LENGTH_LONG).show()
         }
     }
 }
