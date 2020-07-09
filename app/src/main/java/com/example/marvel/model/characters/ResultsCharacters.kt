@@ -5,6 +5,9 @@ import android.annotation.SuppressLint
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @SuppressLint("ParcelCreator")
 @Parcelize
@@ -41,12 +44,8 @@ data class ResultsCharacters(
         @SuppressLint("ParcelCreator")
         @Parcelize
         data class Characters(
-            @SerializedName("comics")
-            var comics: Comics? = Comics(),
             @SerializedName("description")
             var description: String? = "",
-            @SerializedName("events")
-            var events: Events? = Events(),
             @SerializedName("id")
             var id: Int? = 0,
             @SerializedName("modified")
@@ -55,14 +54,8 @@ data class ResultsCharacters(
             var name: String? = "",
             @SerializedName("resourceURI")
             var resourceURI: String? = "",
-            @SerializedName("series")
-            var series: Series? = Series(),
-            @SerializedName("stories")
-            var stories: Stories? = Stories(),
             @SerializedName("thumbnail")
-            var thumbnail: Thumbnail? = Thumbnail(),
-            @SerializedName("urls")
-            var urls: List<Url?>? = listOf()
+            var thumbnail: Thumbnail? = Thumbnail()
         ) : Parcelable {
             @SuppressLint("ParcelCreator")
             @Parcelize

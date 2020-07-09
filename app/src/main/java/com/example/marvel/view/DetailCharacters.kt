@@ -8,11 +8,16 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProviders
 import com.example.marvel.R
+import com.example.marvel.model.characters.CharacterRoom
 import com.example.marvel.model.characters.ResultsCharacters
 import com.example.marvel.model.characters.ResultsCharacters.Data.Characters
+import com.example.marvel.viewmodel.ViewModelMarvel
+import com.example.marvel.viewmodel.ViewModelRoom
 import com.squareup.picasso.Picasso
 
 class DetailCharacters : AppCompatActivity() {
@@ -23,6 +28,8 @@ class DetailCharacters : AppCompatActivity() {
     private lateinit var descripiton: TextView
     private lateinit var favorite: Button
     private lateinit var character: Characters
+    private val activity = this
+    private val viewModelRoom : ViewModelRoom by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +62,12 @@ class DetailCharacters : AppCompatActivity() {
             val bundle = Bundle()
             bundle.putParcelable("Hero", character)
             startActivity(Intent(this, ImageCharactersActivity::class.java).putExtras(bundle))
+        }
+
+        favorite.setOnClickListener {
+            val characterRoom = CharacterRoom(character.description, character.id, character.name, character.thumbnail?.path + ".jpg")
+            viewModelRoom.insertCharacterRoom(activity, characterRoom)
+            Toast.makeText(activity, "Add aos favoritos", Toast.LENGTH_LONG).show()
         }
     }
 }

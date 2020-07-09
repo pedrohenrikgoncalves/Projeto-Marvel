@@ -1,5 +1,9 @@
 package com.example.marvel.repository
 
+import android.content.Context
+import com.example.marvel.data.CharacterDao
+import com.example.marvel.data.DatabaseBuilder
+import com.example.marvel.model.characters.CharacterRoom
 import com.example.marvel.model.characters.ResultsCharacters
 import com.example.marvel.model.comics.ResultsComics
 import com.example.marvel.model.creators.ResultsCreators
@@ -18,6 +22,14 @@ class RepositoryMarvel {
 
     //realizando a conexão com a api atraves do retroInit
     private var serviceInit = RetroInit(url).create(service)
+
+    private fun initDataBase(context : Context) = DatabaseBuilder.getAppDatabase(context)
+
+    suspend fun getListRoom(context: Context): MutableList<CharacterRoom> = initDataBase(context).characterdao().getAllListRoom()
+
+    suspend fun insertCharacter(context: Context, character: CharacterRoom): Unit= initDataBase(context).characterdao().insert(character)
+
+    suspend fun removerTeam(context: Context, character: CharacterRoom): Unit= initDataBase(context).characterdao().delete(character)
 
     suspend fun getCharacters() : ResultsCharacters {
         return serviceInit.getServiceCharacters(ts, hash, publicKey)
