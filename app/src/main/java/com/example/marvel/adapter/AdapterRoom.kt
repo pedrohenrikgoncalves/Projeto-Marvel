@@ -1,5 +1,6 @@
 package com.example.marvel.adapter
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import com.example.marvel.R
 import com.example.marvel.model.characters.CharacterRoom
 import com.example.marvel.model.characters.ResultsCharacters
 import com.example.marvel.view.DetailCharacters
+import com.example.marvel.view.DetailFavoritesActivity
 import com.squareup.picasso.Picasso
 
 class AdapterRoom(private val charactersList: MutableSet<CharacterRoom>) : RecyclerView.Adapter<ViewHolderCharacters>() {
@@ -24,11 +26,12 @@ class AdapterRoom(private val charactersList: MutableSet<CharacterRoom>) : Recyc
             Picasso.get().load(character.image + ".jpg").error(R.drawable.logo_aplicativo)
                     .into(viewHolderCharacters.imageView)
             viewHolderCharacters.cardViewCharacters.setOnClickListener { view ->
-                val intent = Intent(view.context, DetailCharacters::class.java)
+                val intent = Intent(view.context, DetailFavoritesActivity::class.java)
                 val bundle = Bundle()
                 bundle.putParcelable("Hero", character)
                 intent.putExtras(bundle)
                 view.context.startActivity(intent)
+                (view.context as Activity).finish()
             }
         }
 

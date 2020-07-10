@@ -1,5 +1,6 @@
 package com.example.marvel.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
@@ -23,27 +24,29 @@ class FavoritesActivity : AppCompatActivity() {
     private var results = mutableSetOf<CharacterRoom>()
     private val viewModelRoom : ViewModelRoom by viewModels()
     private val activity = this
+    private lateinit var adapterCharacter : AdapterRoom
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorites)
         val window = window
-        window.statusBarColor = getColor(R.color.colorSplash)
-        getWindow().navigationBarColor = ContextCompat.getColor(this, R.color.colorSplash)
+        window.statusBarColor = getColor(R.color.colorblack)
+        getWindow().navigationBarColor = ContextCompat.getColor(this, R.color.colorblack)
 
         val recycler = findViewById<RecyclerView>(R.id.recycler_fav)
         val progressbar = findViewById<ProgressBar>(R.id.progressFav)
 
-        val adapterCharacter = AdapterRoom(results)
+        adapterCharacter = AdapterRoom(results)
         recycler.adapter = adapterCharacter
         val layoutManager = LinearLayoutManager(this)
         recycler.layoutManager = layoutManager
 
-        viewModelRoom.getListRoom(activity)
         viewModelRoom.listFav.observe(this, Observer {
             it?.let {
                 mutableList -> results.addAll(mutableList)
                 adapterCharacter.notifyDataSetChanged()
+                (recycler.adapter as AdapterRoom).notifyDataSetChanged()
+                recycler.requestLayout()
             }
         })
         viewModelRoom.loading.observe(this, Observer { loading ->
@@ -54,5 +57,10 @@ class FavoritesActivity : AppCompatActivity() {
                 adapterCharacter.notifyDataSetChanged()
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModelRoom.getListRoom(this)
     }
 }

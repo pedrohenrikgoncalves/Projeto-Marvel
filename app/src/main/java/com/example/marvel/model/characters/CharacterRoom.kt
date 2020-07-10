@@ -11,11 +11,11 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "characters")
 data class CharacterRoom(
         @ColumnInfo(name = "description")
-        var description: String?,
+        var description: String? = "",
         @PrimaryKey(autoGenerate = true)
-        var id: Int?,
+        var id: Int? = 0,
         @ColumnInfo(name = "name")
-        var name: String?,
+        var name: String? = "",
         @ColumnInfo(name = "image")
-        var image: String?
+        var image: String? = ""
 ) : Parcelable

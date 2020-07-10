@@ -14,7 +14,7 @@ import static android.widget.Toast.makeText;
 
 public class AboutActivity extends AppCompatActivity {
 
-    ImageView goot;
+    ImageView groot;
     Context context = this;
 
     @Override
@@ -26,16 +26,16 @@ public class AboutActivity extends AppCompatActivity {
         window.setStatusBarColor(getColor(R.color.colorSplash));
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.colorSplash));
 
-        goot = findViewById(R.id.imageGoot);
+        groot = findViewById(R.id.imageGoot);
 
-        goot.setOnClickListener(new View.OnClickListener() {
+        groot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 makeText(context, R.string.goot, Toast.LENGTH_SHORT).show();
                 playSound();
             }
         });
-        goot.setOnLongClickListener(new View.OnLongClickListener() {
+        groot.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
                 playSoundLong();

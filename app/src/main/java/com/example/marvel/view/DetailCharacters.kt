@@ -2,7 +2,6 @@ package com.example.marvel.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
@@ -11,12 +10,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProviders
 import com.example.marvel.R
 import com.example.marvel.model.characters.CharacterRoom
-import com.example.marvel.model.characters.ResultsCharacters
 import com.example.marvel.model.characters.ResultsCharacters.Data.Characters
-import com.example.marvel.viewmodel.ViewModelMarvel
 import com.example.marvel.viewmodel.ViewModelRoom
 import com.squareup.picasso.Picasso
 
@@ -39,10 +35,10 @@ class DetailCharacters : AppCompatActivity() {
         window.statusBarColor = getColor(R.color.detailColor)
         window.navigationBarColor = ContextCompat.getColor(this, R.color.detailColor)
 
-        imageCharacter = findViewById(R.id.img_characters)
-        imageBackground = findViewById(R.id.img_characters_two)
-        title = findViewById(R.id.title_characters)
-        descripiton = findViewById(R.id.description_characters)
+        imageCharacter = findViewById(R.id.img_favorites)
+        imageBackground = findViewById(R.id.img_favorites_two)
+        title = findViewById(R.id.title_favorites)
+        descripiton = findViewById(R.id.description_favorites)
         favorite = findViewById(R.id.btn_character)
 
         if (intent != null) {
@@ -67,7 +63,7 @@ class DetailCharacters : AppCompatActivity() {
         favorite.setOnClickListener {
             val characterRoom = CharacterRoom(character.description, character.id, character.name, character.thumbnail?.path + ".jpg")
             viewModelRoom.insertCharacterRoom(activity, characterRoom)
-            Toast.makeText(activity, R.string.successfully_favorites, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, R.string.successfully_favorites, Toast.LENGTH_SHORT).show()
         }
     }
 }

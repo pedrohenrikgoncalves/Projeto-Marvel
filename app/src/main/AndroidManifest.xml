@@ -14,8 +14,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".view.DetailFavoritesActivity"></activity>
-
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"
@@ -23,6 +21,9 @@
         <activity android:name=".view.ImageCharactersActivity"></activity>
         <activity android:name=".view.ImageEventsActivity"></activity>
         <activity android:name=".view.ImageComicsActivity" />
+        <activity
+            android:name=".view.DetailFavoritesActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.FavoritesActivity"
             android:screenOrientation="portrait" />

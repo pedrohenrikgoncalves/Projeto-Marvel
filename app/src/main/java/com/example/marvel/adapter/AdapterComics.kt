@@ -20,7 +20,7 @@ class AdapterComics(private val comicsList: MutableSet<ResultsComics.Data.Comics
     override fun onBindViewHolder(viewHolderComics: ViewHolderComics, position: Int) {
         val comic = comicsList.elementAt(position)
         viewHolderComics.titulo.text = comic.title
-        viewHolderComics.edicao.text = comic.id.toString()
+        viewHolderComics.identification.text = comic.id.toString()
         Picasso.get().load(comic.thumbnail?.path + ".jpg").error(R.drawable.logo_aplicativo)
                 .into(viewHolderComics.imageView)
         viewHolderComics.cardViewComics.setOnClickListener { v ->

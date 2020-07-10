@@ -21,8 +21,10 @@
     <string name="favorites">Favorites</string>
     <string name="nav_favorites_text">My favorite characters</string>
     <string name="add_favorites">Add to favorites</string>
-    <string name="successfully_favorites">Added successfully</string>
+    <string name="remove_sucess_favorites">Successfully removed</string>
     <string name="remove_favorites">Remove from favorites</string>
+    <string name="successfully_favorites">Added successfully</string>
+    <string name="identification">Identification: </string>
     <string name="about">About</string>
     <string name="nav_about_text">Know a little about Marvel</string>
     <string name="btn_characters">CHARACTERS</string>
@@ -42,7 +44,6 @@
     <string name="error_exiting">Error exiting</string>
     <string name="goot">I\'m Groot</string>
     <string name="update">Update</string>
-    <string name="identification">Identification: </string>
     <string name="panel">Panel</string>
     <string name="fill_in_correctly">Please fill in the fields correctly</string>
     <string name="username_or_password">The username or password you entered is incorrect</string>
